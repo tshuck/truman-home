@@ -36,6 +36,8 @@ export const breakpoints = {
 }
 
 export const widths = {
+  xs: 300,
+  sm: 540,
   md: 720,
   lg: 960,
   xl: 1140
@@ -54,11 +56,14 @@ export const dimensions = {
     h4: 1.25
   },
   lineHeight: {
+    list: 2,
     regular: 1.45,
     heading: 1.2
   },
   containerPadding: 1.5,
   margins: {
+    xs: 0.25,
+    sm: 0.75,
     md: 1,
     lg: 2,
     xl: 5

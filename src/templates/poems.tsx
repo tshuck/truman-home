@@ -1,9 +1,11 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
+import styled from '@emotion/styled'
 
+import { colors } from '../styles/variables'
 import Page from '../components/Page'
 import Container from '../components/Container'
-import IndexLayout from '../layouts'
+import { PoemsLayout } from '../layouts'
 
 interface PageTemplateProps {
   data: {
@@ -27,15 +29,19 @@ interface PageTemplateProps {
   }
 }
 
+const Header = styled.h1`
+  color: ${colors.brand}
+`
+
 const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => (
-  <IndexLayout>
+  <PoemsLayout>
     <Page>
       <Container>
-        <h1>{data.markdownRemark.frontmatter.title}</h1>
+        <Header>{data.markdownRemark.frontmatter.title}</Header>
         <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
       </Container>
     </Page>
-  </IndexLayout>
+  </PoemsLayout>
 )
 
 export default PageTemplate

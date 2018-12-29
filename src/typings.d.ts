@@ -13,3 +13,15 @@ declare module '*.module.css' {
   const cssModule: CSSModule
   export = cssModule
 }
+
+declare module GraphQL {
+  interface data {
+    site: {
+      siteMetadata: {
+        title: string,
+        description: string,
+        poems: Array<{title: string, url: string}>
+      }
+    }
+  }
+}
