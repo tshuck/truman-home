@@ -9,7 +9,17 @@ module.exports = {
       name: 'Truman Shuck',
       url: 'https://trumanshuck.com',
       email: 'truman.shuck@gmail.com'
-    }
+    },
+    poems: [
+      { title: 'I walk a little more slowly', url: '/poems/i-walk-a-little'},
+      { title: 'sometimes I feel old', url: '/poems/sometimes-i-feel-old'},
+      { title: 'If I bend my neck', url: '/poems/if-i-bend-my-neck'},
+      { title: 'Above my small bed', url: '/poems/above-my-small-bed'},
+      { title: 'We slept in the closet', url: '/poems/we-slept-in-the-closet'},
+      { title: 'When the summer sun carves', url: '/poems/when-the-summer-sun-carves'},
+      { title: 'When I die', url: '/poems/when-i-die'},
+      { title: 'I knew a girl who asked', url: '/poems/i-knew-a-girl-who-asked'},
+    ],
   },
   plugins: [
     {

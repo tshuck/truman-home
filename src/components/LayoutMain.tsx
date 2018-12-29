@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 
 const StyledLayoutMain = styled.main`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex: 1;
 `
 

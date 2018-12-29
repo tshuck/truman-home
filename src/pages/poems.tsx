@@ -4,7 +4,7 @@ import styled from '@emotion/styled'
 
 import Page from '../components/Page'
 import Container from '../components/Container'
-import { IndexLayout } from '../layouts'
+import { PoemsLayout } from '../layouts'
 import { dimensions, colors } from '../styles/variables'
 
 export const Splash = styled.h1`
@@ -18,17 +18,17 @@ const Nav = styled.div`
   text-align: center;
 `
 
-const IndexPage = () => (
-  <IndexLayout>
+const PoemsPage = () => (
+  <PoemsLayout>
     <Page>
       <Container>
-        <Splash>Hello</Splash>
+        <Splash>Latest</Splash>
         <Nav>
-          <Link to="poems">Poems</Link>
+          <Link to="/poems/i-walk-a-little">I walk a little more slowly</Link>
         </Nav>
       </Container>
     </Page>
-  </IndexLayout>
+  </PoemsLayout>
 )
 
-export default IndexPage
+export default PoemsPage

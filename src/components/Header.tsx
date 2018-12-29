@@ -31,16 +31,30 @@ const HomepageLink = styled(Link)`
   }
 `
 
+const Divider = styled.span`
+  margin: ${dimensions.margins.sm}rem;
+  font-size: ${dimensions.headingSizes.h3}rem;
+`
+
 interface HeaderProps {
   title: string
+  crumbs?: Array<{title: string, url: string}>
 }
 
-const Header: React.SFC<HeaderProps> = ({ title }) => (
-  <StyledHeader>
-    <HeaderInner>
-      <HomepageLink to="/">{title}</HomepageLink>
-    </HeaderInner>
-  </StyledHeader>
-)
+const Header: React.SFC<HeaderProps> = ({ title, crumbs=[] }) => {
+  const crumbLinks = crumbs.map(c => <>
+    <Divider>-</Divider>
+    <HomepageLink to={c.url}>{c.title}</HomepageLink>
+  </>)
+
+  return (
+    <StyledHeader>
+      <HeaderInner>
+        <HomepageLink to="/">{title}</HomepageLink>
+        {crumbLinks}
+      </HeaderInner>
+    </StyledHeader>
+  )
+}
 
 export default Header
