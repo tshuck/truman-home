@@ -1,11 +1,10 @@
 /* tslint:disable:max-line-length */
 
 export const colors = {
-  brand: '#663399',
-  lilac: '#9d7cbf',
-  accent: '#ffb238',
-  success: '#37b635',
-  warning: '#ec1818',
+  brand: '#89909F',
+  accent: '#75485E',
+  success: '#70A9A1',
+  warning: '#B2945B',
   ui: {
     bright: '#e0d6eb',
     light: '#f5f3f7',
@@ -48,6 +47,7 @@ export const dimensions = {
     large: 18
   },
   headingSizes: {
+    splash: 20,
     h1: 2.441,
     h2: 1.953,
     h3: 1.563,
@@ -57,7 +57,12 @@ export const dimensions = {
     regular: 1.45,
     heading: 1.2
   },
-  containerPadding: 1.5
+  containerPadding: 1.5,
+  margins: {
+    md: 1,
+    lg: 2,
+    xl: 5
+  }
 }
 
 export const heights = {
