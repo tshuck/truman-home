@@ -8,7 +8,7 @@ than I did before\
 <in></in> (each step a question\
 <in></in> answered by an echo)
 
-I can hear the sea, still, but hear the waves'\
+I know the sea, still, but hear the waves'\
 crash fuzzyfar away\
 <in></in> (a bone china plate dropped\
 <in></in> on the other side of the house)

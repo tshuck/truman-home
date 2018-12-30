@@ -12,7 +12,7 @@ module.exports = {
     },
     poems: [
       { title: 'I walk a little more slowly', url: '/poems/i-walk-a-little'},
-      { title: 'sometimes I feel old', url: '/poems/sometimes-i-feel-old'},
+      { title: 'Sometimes I feel old', url: '/poems/sometimes-i-feel-old'},
       { title: 'If I bend my neck', url: '/poems/if-i-bend-my-neck'},
       { title: 'Above my small bed', url: '/poems/above-my-small-bed'},
       { title: 'We slept in the closet', url: '/poems/we-slept-in-the-closet'},

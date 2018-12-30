@@ -1,9 +1,9 @@
 ---
 layout: poems
-title: "sometimes I feel old; I can see"
+title: "Sometimes I feel old; I can see"
 ---
 
-sometimes I feel old; I can see\
+Sometimes I feel old; I can see\
 time collecting:\
 <in></in>a fat water droplet bowing some\
 <in></in>thick grass stem\
