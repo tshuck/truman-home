@@ -60,6 +60,20 @@ module.exports = {
         siteUrl: 'https://gatsby-starter-typescript-plus.netlify.com'
       }
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-131507852-1",
+        // Puts tracking script in the head instead of the body
+        head: false,
+        // Setting this parameter is optional
+        anonymize: true,
+        // Setting this parameter is also optional
+        respectDNT: true,
+        // Avoids sending pageview hits from custom paths
+        exclude: [],
+      },
+    },
     'gatsby-plugin-emotion',
     'gatsby-plugin-typescript',
     'gatsby-plugin-sharp',
