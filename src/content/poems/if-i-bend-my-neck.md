@@ -7,7 +7,7 @@ If I bend my neck back just enough\
 <in></in>each wrinkled crease a slithering earthquake of skin\
 I can see where the tallest spruce\
 begins to pierce the bottom edge of the sun\
-<in></in>in just a moment its yoke will run out\
+<in></in>in just a moment its yolk will run out\
 <in></in>and be absorbed by the softest bits of sky.
 
 And I know I could chase the sunset,\
