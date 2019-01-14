@@ -19,6 +19,7 @@ module.exports = {
       { title: 'When the summer sun carves', url: '/poems/when-the-summer-sun-carves'},
       { title: 'When I die', url: '/poems/when-i-die'},
       { title: 'I knew a girl who asked', url: '/poems/i-knew-a-girl-who-asked'},
+      { title: 'The wind', url: '/poems/the-wind'},
     ],
   },
   plugins: [
