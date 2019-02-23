@@ -29,53 +29,56 @@ class WeMoveAlong extends Draw {
   private whatAre: React.RefObject<HTMLSpanElement> = React.createRef()
   private qmark: React.RefObject<HTMLSpanElement> = React.createRef()
 
-  moveToA(from: React.RefObject<HTMLElement>, to: React.RefObject<HTMLElement>) {
-    const start = this.top(from)
-    const end = this.left(to)
+  moveToA() {
+    const from = this.top(this.move)
+    const to = this.left(this.a)
 
-    const one = { x: start.x, y: start.y - 10 }
-    const two = { x: end.x - 40, y: one.y }
-    const three = { x: two.x, y: end.y }
-    this.lines(start, one, two, three, end)
+    const one = { x: from.x, y: from.y - 10 }
+    const two = { x: to.x - 40, y: one.y }
+    const three = { x: two.x, y: to.y }
+    this.lines(from, one, two, three, to)
   }
 
-  rolledToPeriod(from: React.RefObject<HTMLElement>, to: React.RefObject<HTMLElement>) {
-    const start = this.right(from)
-    const end = this.top(to)
+  rolledToPeriod() {
+    const from = this.right(this.rolled)
+    const to = this.top(this.period)
 
-    const one = { x: start.x + 10, y: start.y }
-    const two = { x: one.x, y: ((end.y - start.y) / 2 + start.y)}
-    const three = { x: end.x, y: two.y }
-    const four = { x: three.x, y: end.y }
+    const one = { x: from.x + 10, y: from.y }
+    const two = { x: one.x, y: ((to.y - from.y) / 2 + from.y)}
+    const three = { x: to.x, y: two.y }
+    const four = { x: three.x, y: to.y }
 
-    this.lines(start, one, two, three, four)
+    this.lines(from, one, two, three, four)
   }
 
   componentDidMount() {
-    this.line(this.right(this.we), this.left(this.move))
-    this.moveToA(this.move, this.a)
-    this.line(this.right(this.a), this.left(this.long))
-    this.cornerX(this.right(this.long), this.top(this.comma))
-    this.cornerX(this.left(this.comma), this.top(this.shook))
-    this.cornerX(this.right(this.shook), this.top(this.with))
-    this.cornerY(this.bottom(this.with), this.right(this.power))
+    const {
+      left, right, top, bottom,
+    } = this
+    this.line(right(this.we), left(this.move))
+    this.moveToA()
+    this.line(right(this.a), left(this.long))
+    this.cornerX(right(this.long), top(this.comma))
+    this.cornerX(left(this.comma), top(this.shook))
+    this.cornerX(right(this.shook), top(this.with))
+    this.cornerY(bottom(this.with), right(this.power))
 
-    this.cornerY(this.bottom(this.i), this.left(this.allowed))
-    this.humpTop(this.top(this.allowed), this.top(this.aLittle))
-    this.zigY(this.bottom(this.aLittle), this.top(this.a2))
-    this.zigX(this.right(this.a2), this.left(this.shoelace))
-    this.line(this.right(this.shoelace), this.left(this.rolled))
-    this.rolledToPeriod(this.rolled, this.period)
+    this.cornerY(bottom(this.i), left(this.allowed))
+    this.humpTop(top(this.allowed), top(this.aLittle))
+    this.zigY(bottom(this.aLittle), top(this.a2))
+    this.zigX(right(this.a2), left(this.shoelace))
+    this.line(right(this.shoelace), left(this.rolled))
+    this.rolledToPeriod()
 
-    this.zigY(this.bottom(this.imAsking), this.top(this.whatIs))
-    this.humpRight(this.right(this.whatIs), this.right(this.patient))
-    this.humpLeft(this.left(this.patient), this.left(this.littleNose))
-    this.cornerY(this.bottom(this.littleNose), this.left(this.youreCrazy))
-    this.cornerY(this.bottom(this.youreCrazy), this.right(this.period2))
+    this.zigY(bottom(this.imAsking), top(this.whatIs))
+    this.humpRight(right(this.whatIs), right(this.patient))
+    this.humpLeft(left(this.patient), left(this.littleNose))
+    this.cornerY(bottom(this.littleNose), left(this.youreCrazy))
+    this.cornerY(bottom(this.youreCrazy), right(this.period2))
 
-    this.line(this.right(this.what), this.left(this.comma2))
-    this.humpTop(this.top(this.comma2), this.top(this.whatAre))
-    this.line(this.right(this.whatAre), this.left(this.qmark))
+    this.line(right(this.what), left(this.comma2))
+    this.humpTop(top(this.comma2), top(this.whatAre))
+    this.line(right(this.whatAre), left(this.qmark))
   }
 
   render() {
