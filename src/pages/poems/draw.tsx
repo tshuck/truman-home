@@ -3,22 +3,32 @@ import * as d3 from 'd3';
 import styled from '@emotion/styled'
 
 const SVG = styled.svg`
-  width: 660px;
+  width: 680px;
   height: 940px;
   margin: 5em auto;
 `
-const Page = styled.foreignObject`
-  width: 100%;
-  height: 100%;
-  padding: 80px;
-  background-color: #333333;
-  position: relative;
-`
-const Line = styled.div``
+const Page = styled.foreignObject<{ bg: string }>(
+{
+  width: '100%',
+  height: '100%',
+  padding: '80px',
+  position: 'relative',
+  color: '#353839',
+},
+  props => ({
+    backgroundColor: props.bg
+  })
+)
+const Line = styled.div<{ indent?: boolean }>({},
+  props => ({
+    'paddingLeft': props.indent ? "1em" : ''
+  })
+)
+
 const Word = styled.span`
   padding: 0em 0.1em;
-  background-color: #EEEEEE;
-  border: .1em solid #000000;
+  background-color: #FFFFF0;
+  border: .1em solid #353839;
 `
 
 type Point = {
