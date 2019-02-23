@@ -11,6 +11,7 @@ module.exports = {
       email: 'truman.shuck@gmail.com'
     },
     poems: [
+      { title: 'We move along', url: '/poems/we-move-along'},
       { title: 'I walk a little more slowly', url: '/poems/i-walk-a-little'},
       { title: 'Sometimes I feel old', url: '/poems/sometimes-i-feel-old'},
       { title: 'If I bend my neck', url: '/poems/if-i-bend-my-neck'},
