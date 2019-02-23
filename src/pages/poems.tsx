@@ -24,7 +24,7 @@ const PoemsPage = () => (
       <Container>
         <Splash>Latest</Splash>
         <Nav>
-          <Link to="/poems/i-walk-a-little">I walk a little more slowly</Link>
+          <Link to="/poems/we-confessed">We Confessed</Link>
         </Nav>
       </Container>
     </Page>
