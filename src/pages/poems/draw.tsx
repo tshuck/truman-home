@@ -3,7 +3,7 @@ import * as d3 from 'd3';
 import styled from '@emotion/styled'
 
 const SVG = styled.svg`
-  width: 680px;
+  width: 690px;
   height: 940px;
   margin: 5em auto;
 `
@@ -26,7 +26,7 @@ const Line = styled.div<{ indent?: boolean }>({},
 )
 
 const Word = styled.span`
-  padding: 0em 0.1em;
+  padding: 0em 0.2em;
   background-color: #FFFFF0;
   border: .1em solid #353839;
 `
