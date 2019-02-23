@@ -82,17 +82,17 @@ class WeMoveAlong extends Draw {
     const { Line, Page, SVGContainer, Word } = this
     return <PoemsLayout>
       <SVGContainer ref={this.svg}>
-        <Page>
-          <Line>
+        <Page bg="#555555">
+          <Line indent={true}>
             <Word ref={this.we}>We</Word> don’t sit on our asses here, he said. We <Word ref={this.move}>move</Word> on and up. And
           </Line>
           <Line>
             wh<Word ref={this.a}>a</Word>t are your <Word ref={this.long}>long</Word>-range plans?
           </Line>
-          <Line>
+          <Line indent={true}>
             I don’t know. I suppose I just came here to be a teacher<Word ref={this.comma}>,</Word> I said.
           </Line>
-          <Line>
+          <Line indent={true}>
             He <Word ref={this.shook}>shook</Word> his head, couldn’t understand my lack of ambition. I
           </Line>
           <Line>
@@ -107,19 +107,19 @@ class WeMoveAlong extends Draw {
           <Line>
             could travel the corridors of <Word ref={this.power}>power</Word>?
           </Line>
-          <Line>
+          <Line indent={true}>
             <Word ref={this.i}>I</Word> felt brave for a moment and asked him, If everyone moved on
           </Line>
           <Line>
             and up and out who would teach the children?
           </Line>
-          <Line>
+          <Line indent={true}>
             He ignored me, <Word ref={this.allowed}>allowed</Word> himself <Word ref={this.aLittle}>a little smile</Word> with a mouth that
           </Line>
           <Line>
             had no lips.
           </Line>
-          <Line>
+          <Line indent={true}>
             I l<Word ref={this.a2}>a</Word>sted one term, September to January, before he forced me out.
           </Line>
           <Line>
@@ -134,28 +134,28 @@ class WeMoveAlong extends Draw {
           <Line>
             a sentence where I used a ballpoint pen as a visual aid<Word ref={this.period}>.</Word>
           </Line>
-          <Line>
+          <Line indent={true}>
             This is the plastic tube that holds the ink. If you removed this tube
           </Line>
           <Line>
             from the pen what would happen?
           </Line>
-          <Line>
+          <Line indent={true}>
             My students look at me as if they can’t believe <Word ref={this.imAsking}>I’m asking</Word> such a
           </Line>
           <Line>
             dumb-ass question. Man, you wouldn’t be able to write.
           </Line>
-          <Line>
+          <Line indent={true}>
             OK. Now <Word ref={this.whatIs}>what is this</Word> I’m holding in my hand?
           </Line>
-          <Line>
+          <Line indent={true}>
             Again the <Word ref={this.patient}>patient</Word> look. That’s a spring, man.
           </Line>
-          <Line>
+          <Line indent={true}>
             And what would happen if we removed the spring?
           </Line>
-          <Line>
+          <Line indent={true}>
             When you try to push the tube out it won’t write because there’s
           </Line>
           <Line>
@@ -170,7 +170,7 @@ class WeMoveAlong extends Draw {
           <Line>
             you come in telling him about missing springs or tubes<Word ref={this.period2}>.</Word>
           </Line>
-          <Line>
+          <Line indent={true}>
             Now look at what I’m writing on the board. “The spring makes
           </Line>
           <Line>
@@ -179,7 +179,7 @@ class WeMoveAlong extends Draw {
           <Line>
             <Word ref={this.whatAre}>what are we</Word> talking about in this sentence<Word ref={this.qmark}>?</Word>
           </Line>
-          <Line>
+          <Line indent={true}>
             The pen.
           </Line>
         </Page>
