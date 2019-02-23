@@ -115,13 +115,15 @@ class Draw extends React.Component<{}, {}> {
   }
 
   humpLeft(from: Point, to: Point) {
-    const one = { x: from.x - 10, y: from.y }
+    const bigHump = Math.min(from.x, to.x)
+    const one = { x: bigHump - 10, y: from.y }
     const two = { x: one.x, y: to.y }
     this.lines(from, one, two, to)
   }
 
   humpRight(from: Point, to: Point) {
-    const one = { x: from.x + 10, y: from.y }
+    const bigHump = Math.max(from.x, to.x)
+    const one = { x: bigHump + 10, y: from.y }
     const two = { x: one.x, y: to.y }
     this.lines(from, one, two, to)
   }

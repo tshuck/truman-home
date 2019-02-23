@@ -11,6 +11,7 @@ module.exports = {
       email: 'truman.shuck@gmail.com'
     },
     poems: [
+      { title: 'We Confessed', url: '/poems/we-confessed'},
       { title: 'You\'re Primal', url: '/poems/you-re-primal'},
       { title: 'We move along', url: '/poems/we-move-along'},
       { title: 'I try to', url: '/poems/i-try-to'},
