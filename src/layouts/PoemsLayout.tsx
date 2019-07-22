@@ -8,7 +8,11 @@ import '../styles/normalize'
 import Header from '../components/Header'
 import LayoutRoot from '../components/LayoutRoot'
 import LayoutMain from '../components/LayoutMain'
-import { colors, widths, dimensions } from '../styles/variables'
+import { colors, widths, device, dimensions } from '../styles/variables'
+
+
+const Children = styled.div`
+`
 
 const Nav = styled.ul`
   width: ${widths.xs}px;
@@ -17,6 +21,12 @@ const Nav = styled.ul`
   border-right: thin solid ${colors.brand};
   list-style-type: none;
   line-height: ${dimensions.lineHeight.list}rem;
+
+  @media ${device.xs} {
+    width: 100%;
+    border-right: 0;
+    border-top: thin solid ${colors.brand};
+  }
 `
 
 const PoemsLayout: React.SFC = ({ children }) => (
@@ -37,7 +47,7 @@ const PoemsLayout: React.SFC = ({ children }) => (
     `}
     render={(data: GraphQL.data) => {
       const links = data.site.siteMetadata.poems.map(p => (
-        <li><Link to={p.url}>{p.title}</Link></li>
+        <li key={p.url}><Link to={p.url}>{p.title}</Link></li>
       ))
       return (
         <LayoutRoot>
@@ -51,7 +61,9 @@ const PoemsLayout: React.SFC = ({ children }) => (
           <Header title={data.site.siteMetadata.title} crumbs={[{url: '/poems', title: 'poems'}]}></Header>
           <LayoutMain>
             <Nav>{links}</Nav>
-            {children}
+            <Children>
+              {children}
+            </Children>
           </LayoutMain>
         </LayoutRoot>
       )
