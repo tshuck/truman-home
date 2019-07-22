@@ -10,6 +10,10 @@ const StyledLayoutMain = styled.main`
   @media ${device.xs} {
     flex-direction: column-reverse;
   }
+
+  @media ${device.lg} {
+    flex-direction: row;
+  }
 `
 
 interface LayoutMainProps {
