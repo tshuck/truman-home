@@ -27,6 +27,13 @@ const Nav = styled.ul`
     border-right: 0;
     border-top: thin solid ${colors.brand};
   }
+
+  @media ${device.lg} {
+    width: ${widths.xs}px;
+    border-right: thin solid ${colors.brand};
+    border-top: 0;
+    margin-right: 5rem;
+  }
 `
 
 const PoemsLayout: React.SFC = ({ children }) => (
