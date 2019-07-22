@@ -221,7 +221,7 @@ class YourePrimal extends Draw {
             thought at the time.
           </Line>
         </Page>
-      </SVGContainer>>
+      </SVGContainer>
     </PoemsLayout>
   }
 }

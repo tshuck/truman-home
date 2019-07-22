@@ -1,10 +1,15 @@
 import * as React from 'react'
 import styled from '@emotion/styled'
+import { device } from '../styles/variables'
 
 const StyledLayoutMain = styled.main`
   display: flex;
   flex-direction: row;
   flex: 1;
+
+  @media ${device.xs} {
+    flex-direction: column-reverse;
+  }
 `
 
 interface LayoutMainProps {

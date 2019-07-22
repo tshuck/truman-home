@@ -22,7 +22,7 @@ const HeaderInner = styled(Container)`
 
 const HomepageLink = styled(Link)`
   color: ${colors.white};
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 600;
 
   &:hover,
@@ -31,7 +31,12 @@ const HomepageLink = styled(Link)`
   }
 `
 
-const Divider = styled.span`
+const DividerWrap = styled.div`
+ display: flex;
+ align-items: center;
+`
+
+const Divider = styled.div`
   margin: ${dimensions.margins.sm}rem;
   font-size: ${dimensions.headingSizes.h3}rem;
 `
@@ -42,15 +47,17 @@ interface HeaderProps {
 }
 
 const Header: React.SFC<HeaderProps> = ({ title, crumbs=[] }) => {
-  const crumbLinks = crumbs.map(c => <>
+  const crumbLinks = crumbs.map(c => <DividerWrap key={title}>
     <Divider>-</Divider>
     <HomepageLink to={c.url}>{c.title}</HomepageLink>
-  </>)
+  </DividerWrap>)
 
   return (
     <StyledHeader>
       <HeaderInner>
-        <HomepageLink to="/">{title}</HomepageLink>
+        <DividerWrap>
+          <HomepageLink to="/">{title}</HomepageLink>
+        </DividerWrap>
         {crumbLinks}
       </HeaderInner>
     </StyledHeader>
