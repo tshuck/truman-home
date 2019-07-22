@@ -35,6 +35,14 @@ export const breakpoints = {
   xl: 1200
 }
 
+export const device = {
+  xs: `(min-width: ${breakpoints.xs}px)`,
+  sm: `(min-width: ${breakpoints.sm}px)`,
+  md: `(min-width: ${breakpoints.md}px)`,
+  lg: `(min-width: ${breakpoints.lg}px)`,
+  xl: `(min-width: ${breakpoints.xl}px)`,
+};
+
 export const widths = {
   xs: 300,
   sm: 540,
@@ -49,6 +57,7 @@ export const dimensions = {
     large: 18
   },
   headingSizes: {
+    splashSm: 9,
     splash: 20,
     h1: 2.441,
     h2: 1.953,
