@@ -362,7 +362,7 @@ class WeConfessed extends Draw {
             <Word ref={this.giveMyself}>give myself a good talking to. For Christ’s sake, kid, straighten up.</Word>
           </Line>
         </Page>
-      </SVGContainer>>
+      </SVGContainer>
     </PoemsLayout>
   }
 }

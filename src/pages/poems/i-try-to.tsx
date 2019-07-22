@@ -111,7 +111,7 @@ class ITryTo extends Draw {
             They’re not <Word>shy</Word> about speaking up in class, but putting words on
           </Line>
         </Page>
-      </SVGContainer>>
+      </SVGContainer>
     </PoemsLayout>
   }
 }
