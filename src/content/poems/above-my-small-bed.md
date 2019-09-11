@@ -1,6 +1,6 @@
 ---
 layout: poems
-title: "Above my small bed higher than I can quite"
+title: 'Above my small bed higher than I can quite'
 ---
 
 Above my small bed higher than I can quite\
@@ -18,7 +18,7 @@ lies a nest of tiny green-glowing stars\
 
 I remember once\
 using the curled ropes of your hair\
-to connected them together.  You asked why\
+to connected them together. You asked why\
 and I told you the story of the star scorpion\
 <in></in>whose barbed tail is made of the\
 <in></in>hottest bits of sun fire and whose\
