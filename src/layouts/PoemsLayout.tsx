@@ -10,9 +10,7 @@ import LayoutRoot from '../components/LayoutRoot'
 import LayoutMain from '../components/LayoutMain'
 import { colors, widths, device, dimensions } from '../styles/variables'
 
-
-const Children = styled.div`
-`
+const Children = styled.div``
 
 const Nav = styled.ul`
   width: ${widths.xs}px;
@@ -54,7 +52,9 @@ const PoemsLayout: React.SFC = ({ children }) => (
     `}
     render={(data: GraphQL.data) => {
       const links = data.site.siteMetadata.poems.map(p => (
-        <li key={p.url}><Link to={p.url}>{p.title}</Link></li>
+        <li key={p.url}>
+          <Link to={p.url}>{p.title}</Link>
+        </li>
       ))
       return (
         <LayoutRoot>
@@ -65,12 +65,10 @@ const PoemsLayout: React.SFC = ({ children }) => (
               { name: 'keywords', content: 'truman, software, poems, oranges' }
             ]}
           />
-          <Header title={data.site.siteMetadata.title} crumbs={[{url: '/poems', title: 'poems'}]}></Header>
+          <Header title={data.site.siteMetadata.title} crumbs={[{ url: '/poems', title: 'poems' }]} />
           <LayoutMain>
             <Nav>{links}</Nav>
-            <Children>
-              {children}
-            </Children>
+            <Children>{children}</Children>
           </LayoutMain>
         </LayoutRoot>
       )

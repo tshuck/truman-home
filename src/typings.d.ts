@@ -14,13 +14,19 @@ declare module '*.module.css' {
   export = cssModule
 }
 
-declare module GraphQL {
+declare namespace GraphQL {
+  interface Poem {
+    title: string
+    url: string
+  }
+
+  // eslint-disable-next-line @typescript-eslint/class-name-casing
   interface data {
     site: {
       siteMetadata: {
-        title: string,
-        description: string,
-        poems: Array<{title: string, url: string}>
+        title: string
+        description: string
+        poems: Poem[]
       }
     }
   }

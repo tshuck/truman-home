@@ -30,7 +30,7 @@ interface PageTemplateProps {
 }
 
 const Header = styled.h1`
-  color: ${colors.brand}
+  color: ${colors.brand};
 `
 
 const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => (
@@ -38,6 +38,7 @@ const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => (
     <Page>
       <Container>
         <Header>{data.markdownRemark.frontmatter.title}</Header>
+        {/* eslint-disable-next-line react/no-danger */}
         <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
       </Container>
     </Page>
