@@ -26,9 +26,8 @@
   "dependencies": {
     "@emotion/core": "^10.0.17",
     "@emotion/styled": "^10.0.17",
-    "@types/d3": "^5.7.1",
     "classnames": "^2.2.6",
-    "d3": "^5.9.1",
+    "d3": "^5.12.0",
     "gatsby": "^2.0.3",
     "gatsby-image": "^2.0.5",
     "gatsby-plugin-canonical-urls": "^2.0.5",
@@ -58,6 +57,7 @@
   },
   "devDependencies": {
     "@types/classnames": "^2.2.6",
+    "@types/d3": "^5.7.2",
     "@types/node": "^10.10.1",
     "@types/react": "^16.4.14",
     "@types/react-dom": "^16.0.7",
