@@ -15,10 +15,10 @@
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "dev": "gatsby develop",
     "format": "prettier --write \"src/**/*.{ts,tsx,md}\"",
-    "lint": "tslint 'src/**/*.{ts,tsx}' -p tsconfig.json",
+    "lint": "eslint 'src/**/*.{ts,tsx}' --fix",
     "start": "npm run dev",
     "test": "npm run type-check && npm run lint",
-    "type-check": "tsc"
+    "tsc": "tsc"
   },
   "engines": {
     "node": ">=8.0.0"
@@ -53,7 +53,7 @@
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-helmet": "^5.2.0",
-    "typescript": "^3.0.3"
+    "typescript": "^3.6.3"
   },
   "devDependencies": {
     "@types/classnames": "^2.2.6",
@@ -63,11 +63,12 @@
     "@types/react-dom": "^16.0.7",
     "@types/react-helmet": "^5.0.7",
     "gh-pages": "^2.0.0",
-    "prettier": "^1.14.2",
+    "prettier": "^1.18.2",
     "rimraf": "^2.6.2",
-    "tslint": "^5.11.0",
-    "tslint-config-blvd": "^1.2.1",
-    "tslint-config-prettier": "^1.15.0",
-    "tslint-plugin-prettier": "^2.0.0"
+    "eslint": "^5.16.0",
+    "eslint-config-blvd": "^0.2.0",
+    "eslint-plugin-flowtype": "2.50.3",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-plugin-prettier": "^3.1.0"
   }
 }

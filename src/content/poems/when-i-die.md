@@ -1,6 +1,6 @@
 ---
 layout: poems
-title: "When I die"
+title: 'When I die'
 ---
 
 When I die:\

@@ -32,8 +32,8 @@ const HomepageLink = styled(Link)`
 `
 
 const DividerWrap = styled.div`
- display: flex;
- align-items: center;
+  display: flex;
+  align-items: center;
 `
 
 const Divider = styled.div`
@@ -43,14 +43,16 @@ const Divider = styled.div`
 
 interface HeaderProps {
   title: string
-  crumbs?: Array<{title: string, url: string}>
+  crumbs?: { title: string; url: string }[]
 }
 
-const Header: React.SFC<HeaderProps> = ({ title, crumbs=[] }) => {
-  const crumbLinks = crumbs.map(c => <DividerWrap key={title}>
-    <Divider>-</Divider>
-    <HomepageLink to={c.url}>{c.title}</HomepageLink>
-  </DividerWrap>)
+const Header: React.SFC<HeaderProps> = ({ title, crumbs = [] }) => {
+  const crumbLinks = crumbs.map(c => (
+    <DividerWrap key={title}>
+      <Divider>-</Divider>
+      <HomepageLink to={c.url}>{c.title}</HomepageLink>
+    </DividerWrap>
+  ))
 
   return (
     <StyledHeader>

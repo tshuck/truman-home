@@ -21,8 +21,7 @@ export const colors = {
 }
 
 export const fonts = {
-  sansSerif:
-    '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif',
+  sansSerif: 'Arial, sans-serif',
   serif: 'Georgia, "Times New Roman", Times, serif',
   monospace: 'Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace, monospace'
 }
@@ -40,8 +39,8 @@ export const device = {
   sm: `(min-width: ${breakpoints.sm}px)`,
   md: `(min-width: ${breakpoints.md}px)`,
   lg: `(min-width: ${breakpoints.lg}px)`,
-  xl: `(min-width: ${breakpoints.xl}px)`,
-};
+  xl: `(min-width: ${breakpoints.xl}px)`
+}
 
 export const widths = {
   xs: 300,

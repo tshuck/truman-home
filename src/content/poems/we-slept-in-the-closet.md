@@ -1,6 +1,6 @@
 ---
 layout: poems
-title: "We slept in the closet"
+title: 'We slept in the closet'
 ---
 
 We slept in the closet\
@@ -17,7 +17,7 @@ but none for the boogeyman.
 Outside lay gleamingblocks;\
 our traps hidden in thick carpet\
 and a huge wooden castle dad\
-had built.  It’s walls higher than\
+had built. It’s walls higher than\
 tiptoes and strong enough to\
 keep even the dark things out.
 
