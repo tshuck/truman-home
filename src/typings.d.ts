@@ -2,6 +2,7 @@ interface CSSModule {
   [className: string]: string
 }
 
+declare module 'gatsby-plugin-mdx'
 // type shims for CSS modules
 
 declare module '*.module.scss' {
