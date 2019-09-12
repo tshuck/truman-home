@@ -157,8 +157,4 @@ export default `
       padding-left: 1.25rem;
     }
   }
-
-  in {
-    margin-right: 1rem;
-  }
 `
