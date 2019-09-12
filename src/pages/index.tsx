@@ -1,5 +1,5 @@
-import * as React from 'react'
-import { Link } from 'gatsby'
+import React, { useState } from 'react';
+import { StaticQuery, graphql, Link } from 'gatsby'
 import styled from '@emotion/styled'
 
 import Page from '../components/Page'
@@ -26,21 +26,77 @@ export const Splash = styled.h1`
   }
 `
 
-const Nav = styled.div`
-  text-align: center;
+const tagsQuery = graphql`
+  query TagsQuery {
+    allMdx {
+      group(field: frontmatter___tags) {
+        tag: fieldValue
+        totalCount
+      }
+    }
+  }
 `
 
-const IndexPage = () => (
-  <IndexLayout>
+const pageQuery = graphql`
+  query IndexPageQuery {
+    allMdx(sort: {fields: frontmatter___date}) {
+      nodes {
+        frontmatter {
+          title
+          date
+          tags
+        }
+        fields {
+          slug
+        }
+      }
+    }
+  }
+`
+
+const calculateTags = (tags, clickedTag) => {
+  if(tags.includes(clickedTag)) {
+    return tags.filter(t => t !== clickedTag)
+  }
+
+  return [...tags, clickedTag]
+}
+
+const IndexPage = () => {
+  const [tags, setTags] = useState([]);
+
+  const Tags: React.FC = (data) => {
+    return data.allMdx.group.map(g => {
+      const onClick = () => setTags(calculateTags(tags, g.tag))
+      const isToggled = tags.includes(g.tag) ? 'on' : 'off'
+      return <p onClick={onClick}>{g.tag} {isToggled}</p>
+    })
+  }
+
+  const Content: React.FC = (data) => {
+    return data.allMdx.nodes.map(node => {
+      const nodeTags = new Set(node.frontmatter.tags)
+      const tagsIncluded = tags.filter(t => nodeTags.has(t)).length === 0
+      if(tags.length > 0 && tagsIncluded) {
+        return null
+      }
+      return <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
+    }).filter(i => !!i)
+  }
+
+  return <IndexLayout>
     <Page>
       <Container>
         <Splash>Hello</Splash>
-        <Nav>
-          <Link to="poems">Poems</Link>
-        </Nav>
+      </Container>
+      <Container>
+        <StaticQuery query={tagsQuery} render={Tags} />
+      </Container>
+      <Container>
+        <StaticQuery query={pageQuery} render={Content} />
       </Container>
     </Page>
   </IndexLayout>
-)
+}
 
 export default IndexPage
