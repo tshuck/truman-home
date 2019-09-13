@@ -1,6 +1,5 @@
 import * as React from 'react'
 import Draw from './Draw'
-import PoemsLayout from '../../layouts/PoemsLayout'
 
 class WeConfessed extends Draw {
   private weConfessed: React.RefObject<HTMLSpanElement> = React.createRef()
@@ -295,106 +294,104 @@ class WeConfessed extends Draw {
   public render() {
     const { Line, Page, SVGContainer, Word } = this
     return (
-      <PoemsLayout>
-        <SVGContainer ref={this.svg}>
-          <Page bg="#CD5C5C">
-            <Line indent>
-              <Word ref={this.weConfessed}>We confessed</Word> to breaking all the Ten Commandments<Word ref={this.period}>.</Word> If you
-            </Line>
-            <Line>said you committed adultery or coveted your neighbor’s wife the</Line>
-            <Line>
-              master knew you didn’t know what you were <Word ref={this.talkingAbout}>talking about</Word>, Don’t
-            </Line>
-            <Line>
-              get above <Word ref={this.your}>your</Word>self, boy, and moved on to the next penitent.
-            </Line>
-            <Line indent>
-              After <Word ref={this.first}>First</Word> Communion we continued Examination of <Word ref={this.con}>Con-</Word>
-            </Line>
-            <Line>
-              <Word ref={this.science}>science</Word> for the next sacrament<Word ref={this.colon}>:</Word> Confirmation.{' '}
-              <Word ref={this.the}>The</Word> priest said Exam-
-            </Line>
-            <Line>
-              ination of Conscience and confession would save us from <Word ref={this.hell}>hell</Word>. His
-            </Line>
-            <Line>
-              <Word ref={this.nameWas}>name was</Word> Father White <Word ref={this.andWeWere}>and we were interested</Word> in him{' '}
-              <Word ref={this.because}>because</Word> one
-            </Line>
-            <Line>of the boys said he never wanted to be a priest at all. His mother</Line>
-            <Line>
-              forced him into the priesthood. <Word ref={this.weDoubted}>We doubted</Word> that boy, but he said he
-            </Line>
-            <Line>knew one of the maids at the priests’ house and she said Father White</Line>
-            <Line>
-              got drunk at dinner and told <Word ref={this.theOther}>the other</Word> priests his only dream was to
-            </Line>
-            <Line>grow up and drive the bus that went from Limerick to Galway and</Line>
-            <Line>
-              back but his mother wouldn’t let him. It was <Word ref={this.strange}>strange</Word> to be examined
-            </Line>
-            <Line>by someone who became a priest because his mother made him. I</Line>
-            <Line>
-              wondered if the <Word ref={this.dream}>dream</Word> of the bu<Word ref={this.s}>s</Word> was in his head while he stood at
-            </Line>
-            <Line>
-              the altar saying Mass<Word ref={this.itWasStrange}>. It was strange, also,</Word> to think of a priest getting
-            </Line>
-            <Line>
-              drunk, <Word ref={this.becauseEveryone}>because everyone</Word> knows they’re not supposed to. I{' '}
-              <Word ref={this.usedTo}>used to</Word>
-            </Line>
-            <Line>
-              look at buses passing by and <Word ref={this.pictureHim}>picture him</Word> up there,{' '}
-              <Word ref={this.smilingAway}>smiling away</Word> and
-            </Line>
-            <Line>
-              no priestly collar <Word ref={this.chokingTheLife}>choking the life out of</Word> him.
-            </Line>
-            <Line indent>When you get into the habit of examining your conscience it’s</Line>
-            <Line>
-              hard to stop, especially when <Word ref={this.you}>you</Word>’re an Irish Catholic boy<Word ref={this.colon2}>:</Word> If you
-              do
-            </Line>
-            <Line>
-              bad things you look into your soul, and there are the <Word ref={this.sinsFestering}>sins, festering</Word>.
-            </Line>
-            <Line>
-              <Word ref={this.everythingIs}>Everything is either</Word> a sin <Word ref={this.or}>or</Word> not a sin and that’s an idea you
-              might
-            </Line>
-            <Line>carry in your head the rest of your life. Then when you grow up and</Line>
-            <Line>
-              drift away from the church, Mea culpa is <Word ref={this.aFaintWhisper}>a faint whisper</Word> in your{' '}
-              <Word ref={this.past}>past.</Word>
-            </Line>
-            <Line>It’s still there, but now you’re older and not so easily frightened.</Line>
-            <Line indent>
-              <Word ref={this.whenYoure}>When you’re</Word> in a state of grace the soul is a{' '}
-              <Word ref={this.pureDazzling}>pure dazzling white</Word>
-            </Line>
-            <Line>
-              surface, <Word ref={this.but}>but</Word> your sins create abscesses that ooze and{' '}
-              <Word ref={this.stinkYou}>stink. You try to</Word>
-            </Line>
-            <Line>
-              <Word ref={this.saveYourself}>save yourself with</Word> Mea culpa, <Word ref={this.theOnly}>the only</Word> Latin{' '}
-              <Word ref={this.wordsThatMean}>words that mean any-</Word>
-            </Line>
-            <Line>
-              <Word ref={this.thingToYou}>thing to you</Word> or God<Word ref={this.period2}>.</Word>
-            </Line>
-            <Line indent>If I could travel to my twenty-seventh year, my first teaching</Line>
-            <Line>
-              year, I’d take me out for a steak, a baked potato, a pint of stout. <Word>I'd</Word>
-            </Line>
-            <Line>
-              <Word ref={this.giveMyself}>give myself a good talking to. For Christ’s sake, kid, straighten up.</Word>
-            </Line>
-          </Page>
-        </SVGContainer>
-      </PoemsLayout>
+      <SVGContainer ref={this.svg}>
+        <Page bg="#CD5C5C">
+          <Line indent>
+            <Word ref={this.weConfessed}>We confessed</Word> to breaking all the Ten Commandments<Word ref={this.period}>.</Word> If you
+          </Line>
+          <Line>said you committed adultery or coveted your neighbor’s wife the</Line>
+          <Line>
+            master knew you didn’t know what you were <Word ref={this.talkingAbout}>talking about</Word>, Don’t
+          </Line>
+          <Line>
+            get above <Word ref={this.your}>your</Word>self, boy, and moved on to the next penitent.
+          </Line>
+          <Line indent>
+            After <Word ref={this.first}>First</Word> Communion we continued Examination of <Word ref={this.con}>Con-</Word>
+          </Line>
+          <Line>
+            <Word ref={this.science}>science</Word> for the next sacrament<Word ref={this.colon}>:</Word> Confirmation.{' '}
+            <Word ref={this.the}>The</Word> priest said Exam-
+          </Line>
+          <Line>
+            ination of Conscience and confession would save us from <Word ref={this.hell}>hell</Word>. His
+          </Line>
+          <Line>
+            <Word ref={this.nameWas}>name was</Word> Father White <Word ref={this.andWeWere}>and we were interested</Word> in him{' '}
+            <Word ref={this.because}>because</Word> one
+          </Line>
+          <Line>of the boys said he never wanted to be a priest at all. His mother</Line>
+          <Line>
+            forced him into the priesthood. <Word ref={this.weDoubted}>We doubted</Word> that boy, but he said he
+          </Line>
+          <Line>knew one of the maids at the priests’ house and she said Father White</Line>
+          <Line>
+            got drunk at dinner and told <Word ref={this.theOther}>the other</Word> priests his only dream was to
+          </Line>
+          <Line>grow up and drive the bus that went from Limerick to Galway and</Line>
+          <Line>
+            back but his mother wouldn’t let him. It was <Word ref={this.strange}>strange</Word> to be examined
+          </Line>
+          <Line>by someone who became a priest because his mother made him. I</Line>
+          <Line>
+            wondered if the <Word ref={this.dream}>dream</Word> of the bu<Word ref={this.s}>s</Word> was in his head while he stood at
+          </Line>
+          <Line>
+            the altar saying Mass<Word ref={this.itWasStrange}>. It was strange, also,</Word> to think of a priest getting
+          </Line>
+          <Line>
+            drunk, <Word ref={this.becauseEveryone}>because everyone</Word> knows they’re not supposed to. I{' '}
+            <Word ref={this.usedTo}>used to</Word>
+          </Line>
+          <Line>
+            look at buses passing by and <Word ref={this.pictureHim}>picture him</Word> up there,{' '}
+            <Word ref={this.smilingAway}>smiling away</Word> and
+          </Line>
+          <Line>
+            no priestly collar <Word ref={this.chokingTheLife}>choking the life out of</Word> him.
+          </Line>
+          <Line indent>When you get into the habit of examining your conscience it’s</Line>
+          <Line>
+            hard to stop, especially when <Word ref={this.you}>you</Word>’re an Irish Catholic boy<Word ref={this.colon2}>:</Word> If you
+            do
+          </Line>
+          <Line>
+            bad things you look into your soul, and there are the <Word ref={this.sinsFestering}>sins, festering</Word>.
+          </Line>
+          <Line>
+            <Word ref={this.everythingIs}>Everything is either</Word> a sin <Word ref={this.or}>or</Word> not a sin and that’s an idea you
+            might
+          </Line>
+          <Line>carry in your head the rest of your life. Then when you grow up and</Line>
+          <Line>
+            drift away from the church, Mea culpa is <Word ref={this.aFaintWhisper}>a faint whisper</Word> in your{' '}
+            <Word ref={this.past}>past.</Word>
+          </Line>
+          <Line>It’s still there, but now you’re older and not so easily frightened.</Line>
+          <Line indent>
+            <Word ref={this.whenYoure}>When you’re</Word> in a state of grace the soul is a{' '}
+            <Word ref={this.pureDazzling}>pure dazzling white</Word>
+          </Line>
+          <Line>
+            surface, <Word ref={this.but}>but</Word> your sins create abscesses that ooze and{' '}
+            <Word ref={this.stinkYou}>stink. You try to</Word>
+          </Line>
+          <Line>
+            <Word ref={this.saveYourself}>save yourself with</Word> Mea culpa, <Word ref={this.theOnly}>the only</Word> Latin{' '}
+            <Word ref={this.wordsThatMean}>words that mean any-</Word>
+          </Line>
+          <Line>
+            <Word ref={this.thingToYou}>thing to you</Word> or God<Word ref={this.period2}>.</Word>
+          </Line>
+          <Line indent>If I could travel to my twenty-seventh year, my first teaching</Line>
+          <Line>
+            year, I’d take me out for a steak, a baked potato, a pint of stout. <Word>I'd</Word>
+          </Line>
+          <Line>
+            <Word ref={this.giveMyself}>give myself a good talking to. For Christ’s sake, kid, straighten up.</Word>
+          </Line>
+        </Page>
+      </SVGContainer>
     )
   }
 }
