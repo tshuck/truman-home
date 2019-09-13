@@ -6,6 +6,7 @@ const Container: React.FC = ({children}) => <Box
     maxWidth: 800,
     mx: 'auto',
     px: 3,
+    width: '100%',
   }}>
   {children}
 </Box>

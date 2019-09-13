@@ -9,7 +9,7 @@ const IndexPage = () => {
 
   return <IndexLayout>
     <Container>
-      <Heading textAlign="center" fontSize="5rem" color='brand'>Hello</Heading>
+      <Heading textAlign="center" fontSize="5rem" color='white' m={5}>Hello</Heading>
     </Container>
     <Container>
       <Tags tags={tags} setTags={setTags} />
