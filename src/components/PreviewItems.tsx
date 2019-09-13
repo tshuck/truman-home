@@ -1,5 +1,6 @@
 import React from 'react';
-import { useStaticQuery, graphql, Link } from 'gatsby'
+import { useStaticQuery, graphql, navigate } from 'gatsby'
+import { Box, Heading, Link, Text } from 'rebass'
 
 const query = graphql`
   query PreviewItemsQuery {
@@ -41,19 +42,17 @@ interface IPreviewItems {
 }
 
 const PreviewItem = (node: Node) => (
-  <div key={node.fields.slug}>
-    <h1>
-      <Link to={node.fields.slug}>
+  <Box key={node.fields.slug} pb={5}>
+    <Link href="#" onClick={() => navigate(node.fields.slug)} fontSize={5} color='brand'>
         {node.frontmatter.title}
-      </Link>
-    </h1>
-    <p>
+    </Link>
+    <Text>
       {node.frontmatter.date}
-    </p>
-    <p>
+    </Text>
+    <Text>
       {node.excerpt}
-    </p>
-  </div>
+    </Text>
+  </Box>
 )
 
 const PreviewItems: React.FC<IPreviewItems> = ({ tags }) => {

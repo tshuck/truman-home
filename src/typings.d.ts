@@ -3,6 +3,7 @@ interface CSSModule {
 }
 
 declare module 'gatsby-plugin-mdx'
+declare module '@rebass/forms'
 // type shims for CSS modules
 
 declare module '*.module.scss' {

@@ -3,11 +3,9 @@ import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
 import 'modern-normalize'
-import '../styles/normalize'
 
-import Header from '../components/Header'
-import LayoutRoot from '../components/LayoutRoot'
-import LayoutMain from '../components/LayoutMain'
+import { Heading } from 'rebass'
+import { Container } from '../components'
 
 const MainLayout: React.SFC = ({ children }) => (
   <StaticQuery
@@ -22,7 +20,7 @@ const MainLayout: React.SFC = ({ children }) => (
       }
     `}
     render={(data: GraphQL.data) => (
-      <LayoutRoot>
+      <>
         <Helmet
           title={data.site.siteMetadata.title}
           meta={[
@@ -30,9 +28,13 @@ const MainLayout: React.SFC = ({ children }) => (
             { name: 'keywords', content: 'truman, software, poems, oranges' }
           ]}
         />
-        <Header title={data.site.siteMetadata.title} />
-        <LayoutMain>{children}</LayoutMain>
-      </LayoutRoot>
+        <Heading color='white' bg='brand' width="100%" p={2}>
+          <Container>
+            {data.site.siteMetadata.title}
+          </Container>
+        </Heading>
+        <Container>{children}</Container>
+      </>
     )}
   />
 )
