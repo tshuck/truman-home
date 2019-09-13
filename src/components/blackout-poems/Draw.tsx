@@ -13,7 +13,8 @@ const Page = styled.foreignObject<{ bg: string }>(
     height: '100%',
     padding: '80px',
     position: 'relative',
-    color: '#353839'
+    color: '#353839',
+    lineHeight: '1.5rem'
   },
   props => ({
     backgroundColor: props.bg

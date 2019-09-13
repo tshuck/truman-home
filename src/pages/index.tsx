@@ -1,46 +1,32 @@
-import * as React from 'react'
-import { Link } from 'gatsby'
+import React, { useState } from 'react';
 import styled from '@emotion/styled'
 
-import Page from '../components/Page'
-import Container from '../components/Container'
+import { Container, Page, PreviewItems, Tags } from '../components'
 import { IndexLayout } from '../layouts'
-import { device, dimensions, colors } from '../styles/variables'
+import { colors } from '../styles/variables'
 
 export const Splash = styled.h1`
   color: ${colors.brand};
   text-align: center;
-  margin-top: ${dimensions.margins.xl}rem;
-  text-align: center;
-
-  @media ${device.xs} {
-    font-size: ${dimensions.headingSizes.splashSm}rem;
-  }
-
-  @media ${device.md} {
-    font-size: ${dimensions.headingSizes.splashSm + 5}rem;
-  }
-
-  @media ${device.lg} {
-    font-size: ${dimensions.headingSizes.splash}rem;
-  }
+  font-size: 5rem;
 `
 
-const Nav = styled.div`
-  text-align: center;
-`
+const IndexPage = () => {
+  const [tags, setTags] = useState<string[]>([]);
 
-const IndexPage = () => (
-  <IndexLayout>
+  return <IndexLayout>
     <Page>
       <Container>
         <Splash>Hello</Splash>
-        <Nav>
-          <Link to="poems">Poems</Link>
-        </Nav>
+      </Container>
+      <Container>
+        <Tags tags={tags} setTags={setTags} />
+      </Container>
+      <Container>
+        <PreviewItems tags={tags} />
       </Container>
     </Page>
   </IndexLayout>
-)
+}
 
 export default IndexPage
