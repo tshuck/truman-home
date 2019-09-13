@@ -41,7 +41,7 @@ const Tags: React.FC<ITags> = ({ tags, setTags }) => {
   const tagButtons = group.map(g => {
     const onClick = () => setTags(calculateTags(tags, g.tag))
     return (
-      <Label key={g.tag} color='brand'>
+      <Label key={g.tag} color='white'>
         <Checkbox
           name='tags'
           onClick={onClick}

@@ -4,8 +4,22 @@ import { StaticQuery, graphql } from 'gatsby'
 
 import 'modern-normalize'
 
-import { Heading } from 'rebass'
+import { Heading, Box, Flex } from 'rebass'
 import { Container } from '../components'
+
+const Content: React.FC = ({children}) => <Flex
+  sx={{
+    maxWidth: 800,
+    mx: 'auto',
+    px: 3,
+  }}
+  color="foreground"
+  bg="selection"
+  flexDirection="column"
+  width="100%"
+>
+  {children}
+</Flex>
 
 const MainLayout: React.SFC = ({ children }) => (
   <StaticQuery
@@ -20,7 +34,7 @@ const MainLayout: React.SFC = ({ children }) => (
       }
     `}
     render={(data: GraphQL.data) => (
-      <>
+      <Box bg='background'>
         <Helmet
           title={data.site.siteMetadata.title}
           meta={[
@@ -28,13 +42,14 @@ const MainLayout: React.SFC = ({ children }) => (
             { name: 'keywords', content: 'truman, software, poems, oranges' }
           ]}
         />
-        <Heading color='white' bg='brand' width="100%" p={2}>
-          <Container>
-            {data.site.siteMetadata.title}
-          </Container>
-        </Heading>
-        <Container>{children}</Container>
-      </>
+        <Content>
+          <Heading color='accent' width="100%" p={2}>
+              {data.site.siteMetadata.title}
+          </Heading>
+
+          {children}
+        </Content>
+      </Box>
     )}
   />
 )

@@ -42,11 +42,11 @@ interface IPreviewItems {
 }
 
 const PreviewItem = (node: Node) => (
-  <Box key={node.fields.slug} pb={5}>
-    <Link href="#" onClick={() => navigate(node.fields.slug)} fontSize={5} color='brand'>
+  <Box key={node.fields.slug} pb={5} color='white' width="100%">
+    <Link href="#" onClick={() => navigate(node.fields.slug)} fontSize={5} color='accent'>
         {node.frontmatter.title}
     </Link>
-    <Text>
+    <Text mt={1} color='subtitle'>
       {node.frontmatter.date}
     </Text>
     <Text>
