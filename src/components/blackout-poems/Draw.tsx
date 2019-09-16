@@ -1,6 +1,6 @@
 import * as React from 'react'
 import * as d3 from 'd3'
-import styled from '@emotion/styled'
+import styled from 'styled-components'
 
 const SVG = styled.svg`
   width: 690px;

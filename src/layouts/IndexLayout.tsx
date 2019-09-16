@@ -1,24 +1,26 @@
 import * as React from 'react'
 import Helmet from 'react-helmet'
-import { StaticQuery, graphql, navigate } from 'gatsby'
+import { StaticQuery, graphql, Link } from 'gatsby'
 
 import 'modern-normalize'
 
-import { Heading, Box, Flex, Link } from 'rebass'
+import { Heading, Box, Flex } from 'rebass'
 
-const Content: React.FC = ({children}) => <Flex
-  sx={{
-    maxWidth: 800,
-    mx: 'auto',
-    px: 3,
-  }}
-  color="foreground"
-  bg="selection"
-  flexDirection="column"
-  width="100%"
->
-  {children}
-</Flex>
+const Content: React.FC = ({ children }) => (
+  <Flex
+    sx={{
+      maxWidth: 800,
+      mx: 'auto',
+      px: 3
+    }}
+    color="foreground"
+    bg="selection"
+    flexDirection="column"
+    width="100%"
+  >
+    {children}
+  </Flex>
+)
 
 const MainLayout: React.SFC = ({ children }) => (
   <StaticQuery
@@ -33,7 +35,7 @@ const MainLayout: React.SFC = ({ children }) => (
       }
     `}
     render={(data: GraphQL.data) => (
-      <Box bg='background'>
+      <Box bg="background">
         <Helmet
           title={data.site.siteMetadata.title}
           meta={[
@@ -43,22 +45,17 @@ const MainLayout: React.SFC = ({ children }) => (
         />
         <Content>
           <Heading
-            color='accent'
+            color="accent"
             width="100%"
             p={2}
             fontSize={5}
             sx={{
               borderBottomWidth: '1px',
               borderBottomStyle: 'solid',
-              borderBottomColor: 'white',
+              borderBottomColor: 'white'
             }}
           >
-            <Link
-              color='accent'
-              href="#"
-              onClick={() => navigate("/")}
-              sx={{textDecoration: 'none'}}
-            >
+            <Link to="/">
               {data.site.siteMetadata.title}
             </Link>
           </Heading>
