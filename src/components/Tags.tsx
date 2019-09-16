@@ -41,7 +41,7 @@ const Tags: React.FC<ITags> = ({ tags, setTags }) => {
   const tagButtons = group.map(g => {
     const onClick = () => setTags(calculateTags(tags, g.tag))
     return (
-      <Label key={g.tag} color='white'>
+      <Label key={g.tag} alignItems='center' color='white' sx={{cursor: 'pointer'}}>
         <Checkbox
           name='tags'
           onClick={onClick}
@@ -51,7 +51,7 @@ const Tags: React.FC<ITags> = ({ tags, setTags }) => {
     )
   })
 
-  return <Flex justifyContent="center" mb={5}>
+  return <Flex justifyContent="center" mb={3}>
     {tagButtons}
   </Flex>
 }

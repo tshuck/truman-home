@@ -5,7 +5,8 @@ import styled from '@emotion/styled'
 const SVG = styled.svg`
   width: 690px;
   height: 940px;
-  margin: 5em auto;
+  margin: 2em auto;
+  display: flex;
 `
 const Page = styled.foreignObject<{ bg: string }>(
   {

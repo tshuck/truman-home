@@ -106,7 +106,7 @@ class WeMoveAlong extends Draw {
     const { Line, Page, SVGContainer, Word } = this
     return (
       <SVGContainer ref={this.svg}>
-        <Page bg="#555555">
+        <Page bg="#555">
           <Line indent>
             <Word ref={this.we}>We</Word> don’t sit on our asses here, he said. We <Word ref={this.move}>move</Word> on and up. And
           </Line>
