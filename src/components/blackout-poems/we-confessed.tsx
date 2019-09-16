@@ -295,7 +295,7 @@ class WeConfessed extends Draw {
     const { Line, Page, SVGContainer, Word } = this
     return (
       <SVGContainer ref={this.svg}>
-        <Page bg="#CD5C5C">
+        <Page bg="#cb4b16">
           <Line indent>
             <Word ref={this.weConfessed}>We confessed</Word> to breaking all the Ten Commandments<Word ref={this.period}>.</Word> If you
           </Line>

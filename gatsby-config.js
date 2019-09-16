@@ -9,22 +9,7 @@ module.exports = {
       name: 'Truman Shuck',
       url: 'https://trumanshuck.com',
       email: 'truman.shuck@gmail.com'
-    },
-    poems: [
-      { title: 'We Confessed', url: '/poems/we-confessed'},
-      { title: 'You\'re Primal', url: '/poems/you-re-primal'},
-      { title: 'We move along', url: '/poems/we-move-along'},
-      { title: 'I try to', url: '/poems/i-try-to'},
-      { title: 'I walk a little more slowly', url: '/poems/i-walk-a-little'},
-      { title: 'Sometimes I feel old', url: '/poems/sometimes-i-feel-old'},
-      { title: 'If I bend my neck', url: '/poems/if-i-bend-my-neck'},
-      { title: 'Above my small bed', url: '/poems/above-my-small-bed'},
-      { title: 'We slept in the closet', url: '/poems/we-slept-in-the-closet'},
-      { title: 'When the summer sun carves', url: '/poems/when-the-summer-sun-carves'},
-      { title: 'When I die', url: '/poems/when-i-die'},
-      { title: 'I knew a girl who asked', url: '/poems/i-knew-a-girl-who-asked'},
-      { title: 'The wind', url: '/poems/the-wind'},
-    ],
+    }
   },
   plugins: [
     {
@@ -79,11 +64,11 @@ module.exports = {
         exclude: [],
       },
     },
-    'gatsby-plugin-emotion',
     'gatsby-plugin-typescript',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-mdx'
+    'gatsby-plugin-mdx',
+    'gatsby-plugin-theme-ui'
   ]
 }

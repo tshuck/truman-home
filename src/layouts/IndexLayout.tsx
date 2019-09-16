@@ -1,13 +1,24 @@
 import * as React from 'react'
 import Helmet from 'react-helmet'
-import { StaticQuery, graphql } from 'gatsby'
+import { StaticQuery, graphql, navigate } from 'gatsby'
 
 import 'modern-normalize'
-import '../styles/normalize'
 
-import Header from '../components/Header'
-import LayoutRoot from '../components/LayoutRoot'
-import LayoutMain from '../components/LayoutMain'
+import { Heading, Box, Flex, Link } from 'rebass'
+
+const Content: React.FC = ({children}) => <Flex
+  sx={{
+    maxWidth: 800,
+    mx: 'auto',
+    px: 3,
+  }}
+  color="foreground"
+  bg="selection"
+  flexDirection="column"
+  width="100%"
+>
+  {children}
+</Flex>
 
 const MainLayout: React.SFC = ({ children }) => (
   <StaticQuery
@@ -22,7 +33,7 @@ const MainLayout: React.SFC = ({ children }) => (
       }
     `}
     render={(data: GraphQL.data) => (
-      <LayoutRoot>
+      <Box bg='background'>
         <Helmet
           title={data.site.siteMetadata.title}
           meta={[
@@ -30,9 +41,31 @@ const MainLayout: React.SFC = ({ children }) => (
             { name: 'keywords', content: 'truman, software, poems, oranges' }
           ]}
         />
-        <Header title={data.site.siteMetadata.title} />
-        <LayoutMain>{children}</LayoutMain>
-      </LayoutRoot>
+        <Content>
+          <Heading
+            color='accent'
+            width="100%"
+            p={2}
+            fontSize={5}
+            sx={{
+              borderBottomWidth: '1px',
+              borderBottomStyle: 'solid',
+              borderBottomColor: 'white',
+            }}
+          >
+            <Link
+              color='accent'
+              href="#"
+              onClick={() => navigate("/")}
+              sx={{textDecoration: 'none'}}
+            >
+              {data.site.siteMetadata.title}
+            </Link>
+          </Heading>
+
+          {children}
+        </Content>
+      </Box>
     )}
   />
 )

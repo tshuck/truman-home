@@ -6,7 +6,7 @@ class ITryTo extends Draw {
     const { Line, Page, SVGContainer, Word } = this
     return (
       <SVGContainer ref={this.svg}>
-        <Page bg="mediumorchid">
+        <Page bg="#6c71c4">
           <Line indent>
             <Word>I try to</Word> explain the simple idea of research.
           </Line>

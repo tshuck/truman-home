@@ -1,5 +1,7 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby'
+import { Flex } from 'rebass'
+import { Label, Checkbox } from '@rebass/forms'
 
 interface Group {
   tag: string
@@ -38,13 +40,20 @@ const Tags: React.FC<ITags> = ({ tags, setTags }) => {
 
   const tagButtons = group.map(g => {
     const onClick = () => setTags(calculateTags(tags, g.tag))
-    const isToggled = tags.includes(g.tag) ? 'on' : 'off'
-    return <button onClick={onClick}>{g.tag} {isToggled}</button>
+    return (
+      <Label key={g.tag} alignItems='center' color='white' sx={{cursor: 'pointer'}}>
+        <Checkbox
+          name='tags'
+          onClick={onClick}
+        />
+        {g.tag}
+      </Label>
+    )
   })
 
-  return <div>
+  return <Flex justifyContent="center" mb={3}>
     {tagButtons}
-  </div>
+  </Flex>
 }
 
 export default Tags
