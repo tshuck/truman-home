@@ -352,8 +352,7 @@ class WeConfessed extends Draw {
           </Line>
           <Line indent>When you get into the habit of examining your conscience it’s</Line>
           <Line>
-            hard to stop, especially when <Word ref={this.you}>you</Word>’re an Irish Catholic boy<Word ref={this.colon2}>:</Word> If you
-            do
+            hard to stop, especially when <Word ref={this.you}>you</Word>’re an Irish Catholic boy<Word ref={this.colon2}>:</Word> If you do
           </Line>
           <Line>
             bad things you look into your soul, and there are the <Word ref={this.sinsFestering}>sins, festering</Word>.

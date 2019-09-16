@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { Flex } from 'rebass'
 import { Label, Checkbox } from '@rebass/forms'
@@ -24,7 +24,7 @@ const query = graphql`
 `
 
 const calculateTags = (tags: string[], clickedTag: string): string[] => {
-  if(tags.includes(clickedTag)) {
+  if (tags.includes(clickedTag)) {
     return tags.filter(t => t !== clickedTag)
   }
 
@@ -36,24 +36,25 @@ interface ITags {
   setTags: (tags: string[]) => void
 }
 const Tags: React.FC<ITags> = ({ tags, setTags }) => {
-  const { allMdx: { group } }: Data = useStaticQuery(query)
+  const {
+    allMdx: { group }
+  }: Data = useStaticQuery(query)
 
   const tagButtons = group.map(g => {
     const onClick = () => setTags(calculateTags(tags, g.tag))
     return (
-      <Label key={g.tag} alignItems='center' color='white' sx={{cursor: 'pointer'}}>
-        <Checkbox
-          name='tags'
-          onClick={onClick}
-        />
+      <Label key={g.tag} alignItems="center" color="white" sx={{ cursor: 'pointer' }}>
+        <Checkbox name="tags" onClick={onClick} />
         {g.tag}
       </Label>
     )
   })
 
-  return <Flex justifyContent="center" mb={3}>
-    {tagButtons}
-  </Flex>
+  return (
+    <Flex justifyContent="center" mb={3}>
+      {tagButtons}
+    </Flex>
+  )
 }
 
 export default Tags
