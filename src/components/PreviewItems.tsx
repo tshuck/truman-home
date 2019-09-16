@@ -1,18 +1,18 @@
 import React from 'react';
 import { useStaticQuery, graphql, navigate } from 'gatsby'
-import { Box, Heading, Link, Text } from 'rebass'
+import { Box, Link, Text } from 'rebass'
 
 const query = graphql`
   query PreviewItemsQuery {
-    allMdx(sort: {fields: frontmatter___date}) {
+    allMdx(sort: {order: DESC, fields: frontmatter___date}) {
       nodes {
         excerpt
         frontmatter {
           title
           date
           tags
-          excerpt
           date
+          preview
         }
         fields {
           slug
@@ -27,6 +27,7 @@ interface Node {
     date: string
     tags: string[]
     title: string
+    preview: string[]
   }
   fields: {
     slug: string
@@ -42,15 +43,15 @@ interface IPreviewItems {
 }
 
 const PreviewItem = (node: Node) => (
-  <Box key={node.fields.slug} pb={5} color='white' width="100%">
+  <Box key={node.fields.slug} mb={4} color='white' width="100%">
     <Link href="#" onClick={() => navigate(node.fields.slug)} fontSize={5} color='accent'>
-        {node.frontmatter.title}
+      {node.frontmatter.title}
     </Link>
-    <Text mt={1} color='subtitle'>
+    <Text mt={2} color='subtitle'>
       {node.frontmatter.date}
     </Text>
-    <Text>
-      {node.excerpt}
+    <Text mt={2}>
+      {node.frontmatter.preview.map(i => <Text>{i}</Text>)}
     </Text>
   </Box>
 )

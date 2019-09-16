@@ -1,11 +1,10 @@
 import * as React from 'react'
 import Helmet from 'react-helmet'
-import { StaticQuery, graphql } from 'gatsby'
+import { StaticQuery, graphql, navigate } from 'gatsby'
 
 import 'modern-normalize'
 
-import { Heading, Box, Flex } from 'rebass'
-import { Container } from '../components'
+import { Heading, Box, Flex, Link } from 'rebass'
 
 const Content: React.FC = ({children}) => <Flex
   sx={{
@@ -43,8 +42,25 @@ const MainLayout: React.SFC = ({ children }) => (
           ]}
         />
         <Content>
-          <Heading color='accent' width="100%" p={2}>
+          <Heading
+            color='accent'
+            width="100%"
+            p={2}
+            fontSize={5}
+            sx={{
+              borderBottomWidth: '1px',
+              borderBottomStyle: 'solid',
+              borderBottomColor: 'white',
+            }}
+          >
+            <Link
+              color='accent'
+              href="#"
+              onClick={() => navigate("/")}
+              sx={{textDecoration: 'none'}}
+            >
               {data.site.siteMetadata.title}
+            </Link>
           </Heading>
 
           {children}

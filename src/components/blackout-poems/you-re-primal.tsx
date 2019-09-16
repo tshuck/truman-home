@@ -140,7 +140,7 @@ class YourePrimal extends Draw {
     const { Line, Page, SVGContainer, Word } = this
     return (
       <SVGContainer ref={this.svg}>
-        <Page bg="#CD5C5C">
+        <Page bg="#cb4b16">
           <Line>
             missiles. When they go after <Word ref={this.you}>you</Word> they’<Word ref={this.re}>re</Word> following a{' '}
             <Word ref={this.primal}>primal</Word> instinct.
