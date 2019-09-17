@@ -5,9 +5,22 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { Container } from '../components'
 import Layout from '../layouts'
 
-export default function PageTemplate({ data: { mdx } }) {
+interface PageTemplate {
+  data: {
+    mdx: {
+      id: string,
+      body: string,
+      frontmatter: {
+        title: string
+        minWidth: number
+      }
+    }
+  }
+}
+
+export default function PageTemplate({ data: { mdx } }: PageTemplate) {
   return (
-    <Layout>
+    <Layout minWidth={mdx.frontmatter.minWidth}>
       <Container>
         <Heading color="white" mt={3} mb={3}>
           {mdx.frontmatter.title}
@@ -27,6 +40,7 @@ export const pageQuery = graphql`
       body
       frontmatter {
         title
+        minWidth
       }
     }
   }

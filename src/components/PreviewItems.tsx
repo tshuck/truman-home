@@ -5,14 +5,13 @@ import { Link } from '.'
 
 const query = graphql`
   query PreviewItemsQuery {
-    allMdx(sort: { order: DESC, fields: frontmatter___date }) {
+    allMdx(sort: { order: DESC, fields: frontmatter___published }) {
       nodes {
         excerpt
         frontmatter {
+          published
           title
-          date
           tags
-          date
           preview
         }
         fields {
@@ -25,7 +24,7 @@ const query = graphql`
 interface Node {
   excerpt: string
   frontmatter: {
-    date: string
+    published: string
     tags: string[]
     title: string
     preview: string[]
@@ -50,7 +49,7 @@ const PreviewItem = (node: Node) => (
         {node.frontmatter.title}
       </Link>
       <Text mt={2} color="subtitle">
-        {node.frontmatter.date}
+        {node.frontmatter.published}
       </Text>
     </Flex>
     <Text mt={2}>
