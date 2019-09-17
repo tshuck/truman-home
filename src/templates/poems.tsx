@@ -6,6 +6,9 @@ import { Container } from '../components'
 import Layout from '../layouts'
 
 interface PageTemplate {
+  location: {
+    pathname: string
+  }
   data: {
     mdx: {
       id: string
@@ -18,9 +21,9 @@ interface PageTemplate {
   }
 }
 
-export default function PageTemplate({ data: { mdx } }: PageTemplate) {
+export default function PageTemplate({ location, data: { mdx } }: PageTemplate) {
   return (
-    <Layout minWidth={mdx.frontmatter.minWidth}>
+    <Layout minWidth={mdx.frontmatter.minWidth} location={location}>
       <Container>
         <Heading color="white" mt={3} mb={3}>
           {mdx.frontmatter.title}

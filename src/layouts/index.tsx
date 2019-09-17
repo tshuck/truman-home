@@ -27,7 +27,9 @@ const Content: React.FC<Content> = ({ children, minWidth }) => (
 )
 
 interface Layout {
-  location: any
+  location: {
+    pathname: string
+  }
   minWidth?: number
 }
 
