@@ -8,8 +8,8 @@ import Layout from '../layouts'
 interface PageTemplate {
   data: {
     mdx: {
-      id: string,
-      body: string,
+      id: string
+      body: string
       frontmatter: {
         title: string
         minWidth: number

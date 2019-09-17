@@ -32,12 +32,7 @@ const Tags: React.FC<Tags> = ({ availableTags, selectedTags, setSelectedTags }) 
     <>
       <Flex color="white" mb={1} justifyContent="space-between">
         <Text fontSize={3}>Filter by Tag</Text>
-        <Button
-          variant='outline'
-          ml={1}
-          onClick={() => setSelectedTags([])}
-          sx={{cursor: 'pointer'}}
-        >
+        <Button variant="outline" ml={1} onClick={() => setSelectedTags([])} sx={{ cursor: 'pointer' }}>
           clear
         </Button>
       </Flex>

@@ -2,7 +2,7 @@ import * as React from 'react'
 import * as d3 from 'd3'
 import styled from 'styled-components'
 
-const width = 690;
+const width = 690
 
 const SVG = styled.svg`
   width: ${width}px;
