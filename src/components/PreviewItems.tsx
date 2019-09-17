@@ -44,7 +44,7 @@ interface PreviewItems {
 
 const PreviewItem = (node: Node) => (
   <Box key={node.fields.slug} mb={4} color="white" width="100%">
-    <Flex justifyContent="space-between" flexDirection={["column", "row"]}>
+    <Flex justifyContent="space-between" flexDirection={['column', 'row']}>
       <Link to={node.fields.slug} color="accent" fontSize={3}>
         {node.frontmatter.title}
       </Link>
@@ -52,7 +52,9 @@ const PreviewItem = (node: Node) => (
         {node.frontmatter.published}
       </Text>
     </Flex>
-    <Text mt={2}><i>Excerpt:</i></Text>
+    <Text mt={2}>
+      <i>Excerpt:</i>
+    </Text>
     <Text mt={2} ml={2}>
       {node.frontmatter.preview.map(i => (
         <Text key={i}>{i}</Text>
@@ -64,7 +66,7 @@ const PreviewItem = (node: Node) => (
       </Link>
     </Box>
     <Box
-      mx={[6,7]}
+      mx={[6, 7]}
       py={3}
       sx={{
         borderBottomWidth: '1px',

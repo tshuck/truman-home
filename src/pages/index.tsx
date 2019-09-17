@@ -24,7 +24,7 @@ const query = graphql`
   }
 `
 
-const IndexPage = ({location}: { location: object }) => {
+const IndexPage = ({ location }: { location: object }) => {
   const {
     allMdx: { group }
   }: Data = useStaticQuery(query)
@@ -34,7 +34,7 @@ const IndexPage = ({location}: { location: object }) => {
   return (
     <Layout location={location}>
       <Container>
-        <Heading textAlign="center" fontSize={[6,8]} color="white" m={5}>
+        <Heading textAlign="center" fontSize={[6, 8]} color="white" m={5}>
           Hello
         </Heading>
       </Container>
