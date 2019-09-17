@@ -27,11 +27,15 @@ const Content: React.FC<Content> = ({ children, minWidth }) => (
 )
 
 interface Layout {
+  location: any
   minWidth?: number
 }
 
-const Layout: React.FC<Layout> = ({ children, minWidth }) => (
-  <StaticQuery
+const Layout: React.FC<Layout> = ({ location, children, minWidth }) => {
+ const backButton = <Link to="/" fontSize={4} color="accent">Back</Link>
+ const isRoot = location && location.pathname === '/'
+
+ return <StaticQuery
     query={graphql`
       query MainLayoutQuery {
         site {
@@ -61,9 +65,12 @@ const Layout: React.FC<Layout> = ({ children, minWidth }) => (
               borderBottomColor: 'white'
             }}
           >
-            <Link to="/" fontSize={4} color="accent">
-              {data.site.siteMetadata.title}
-            </Link>
+            <Flex justifyContent="space-between">
+              <Link to="/" fontSize={4} color="accent">
+                {data.site.siteMetadata.title}
+              </Link>
+              {isRoot ? '' : backButton}
+            </Flex>
           </Heading>
 
           {children}
@@ -71,6 +78,6 @@ const Layout: React.FC<Layout> = ({ children, minWidth }) => (
       </Box>
     )}
   />
-)
+}
 
 export default Layout
