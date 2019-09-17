@@ -9,7 +9,7 @@ const query = graphql`
       nodes {
         excerpt
         frontmatter {
-          published
+          published(formatString: "MMMM Do, YYYY")
           title
           tags
           preview
@@ -52,11 +52,17 @@ const PreviewItem = (node: Node) => (
         {node.frontmatter.published}
       </Text>
     </Flex>
-    <Text mt={2}>
+    <Text mt={2}><i>Excerpt:</i></Text>
+    <Text mt={2} ml={2}>
       {node.frontmatter.preview.map(i => (
         <Text key={i}>{i}</Text>
       ))}
     </Text>
+    <Box mt={2}>
+      <Link to={node.fields.slug} color="accent" fontSize={1}>
+        Read more
+      </Link>
+    </Box>
     <Box
       mx={[6,7]}
       py={3}
