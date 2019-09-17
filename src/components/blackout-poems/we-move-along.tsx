@@ -132,8 +132,7 @@ class WeMoveAlong extends Draw {
           </Line>
           <Line>and up and out who would teach the children?</Line>
           <Line indent>
-            He ignored me, <Word ref={this.allowed}>allowed</Word> himself <Word ref={this.aLittle}>a little smile</Word> with a mouth
-            that
+            He ignored me, <Word ref={this.allowed}>allowed</Word> himself <Word ref={this.aLittle}>a little smile</Word> with a mouth that
           </Line>
           <Line>had no lips.</Line>
           <Line indent>

@@ -1,59 +1,46 @@
-import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby'
-import { Flex } from 'rebass'
+import React from 'react'
+import { Button, Flex, Text } from 'rebass'
 import { Label, Checkbox } from '@rebass/forms'
 
-interface Group {
-  tag: string
-}
-interface Data {
-  allMdx: {
-    group: Group[]
-  }
-}
-
-const query = graphql`
-  query TagsQuery {
-    allMdx {
-      group(field: frontmatter___tags) {
-        tag: fieldValue
-        totalCount
-      }
-    }
-  }
-`
-
 const calculateTags = (tags: string[], clickedTag: string): string[] => {
-  if(tags.includes(clickedTag)) {
+  if (tags.includes(clickedTag)) {
     return tags.filter(t => t !== clickedTag)
   }
 
   return [...tags, clickedTag]
 }
 
-interface ITags {
-  tags: string[]
-  setTags: (tags: string[]) => void
+interface Tags {
+  availableTags: string[]
+  selectedTags: string[]
+  setSelectedTags: (tags: string[]) => void
 }
-const Tags: React.FC<ITags> = ({ tags, setTags }) => {
-  const { allMdx: { group } }: Data = useStaticQuery(query)
+const Tags: React.FC<Tags> = ({ availableTags, selectedTags, setSelectedTags }) => {
+  const tagButtons = availableTags.map(tag => {
+    const onClick = () => setSelectedTags(calculateTags(selectedTags, tag))
+    const isSelected = selectedTags.includes(tag)
 
-  const tagButtons = group.map(g => {
-    const onClick = () => setTags(calculateTags(tags, g.tag))
     return (
-      <Label key={g.tag} alignItems='center' color='white' sx={{cursor: 'pointer'}}>
-        <Checkbox
-          name='tags'
-          onClick={onClick}
-        />
-        {g.tag}
+      <Label key={tag} alignItems="center" color="white" sx={{ cursor: 'pointer' }}>
+        <Checkbox name="tags" onChange={onClick} checked={isSelected} />
+        {tag}
       </Label>
     )
   })
 
-  return <Flex justifyContent="center" mb={3}>
-    {tagButtons}
-  </Flex>
+  return (
+    <>
+      <Flex color="white" mb={1} justifyContent="space-between">
+        <Text fontSize={3}>Filter by Tag</Text>
+        <Button variant="outline" ml={1} onClick={() => setSelectedTags([])} sx={{ cursor: 'pointer' }}>
+          clear
+        </Button>
+      </Flex>
+      <Flex justifyContent="center" mb={5}>
+        {tagButtons}
+      </Flex>
+    </>
+  )
 }
 
 export default Tags
