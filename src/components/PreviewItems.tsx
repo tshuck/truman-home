@@ -1,6 +1,6 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import { Box, Text } from 'rebass'
+import { Flex, Box, Text } from 'rebass'
 import { Link } from '.'
 
 const query = graphql`
@@ -40,34 +40,45 @@ interface Data {
   }
 }
 interface PreviewItems {
-  tags: string[]
+  selectedTags: string[]
 }
 
 const PreviewItem = (node: Node) => (
   <Box key={node.fields.slug} mb={4} color="white" width="100%">
-    <Link to={node.fields.slug} color="accent" fontSize={3}>
-      {node.frontmatter.title}
-    </Link>
-    <Text mt={2} color="subtitle">
-      {node.frontmatter.date}
-    </Text>
+    <Flex justifyContent="space-between" flexDirection={["column", "row"]}>
+      <Link to={node.fields.slug} color="accent" fontSize={3}>
+        {node.frontmatter.title}
+      </Link>
+      <Text mt={2} color="subtitle">
+        {node.frontmatter.date}
+      </Text>
+    </Flex>
     <Text mt={2}>
       {node.frontmatter.preview.map(i => (
         <Text key={i}>{i}</Text>
       ))}
     </Text>
+    <Box
+      mx={[6,7]}
+      py={3}
+      sx={{
+        borderBottomWidth: '1px',
+        borderBottomStyle: 'solid',
+        borderBottomColor: 'white'
+      }}
+    />
   </Box>
 )
 
-const PreviewItems: React.FC<PreviewItems> = ({ tags }) => {
+const PreviewItems: React.FC<PreviewItems> = ({ selectedTags }) => {
   const {
     allMdx: { nodes }
   }: Data = useStaticQuery(query)
 
   const hasTags = (node: Node) => {
     const tagSet = new Set(node.frontmatter.tags)
-    const tagsIncluded = tags.filter(t => tagSet.has(t)).length > 0
-    return tags.length === 0 || tagsIncluded
+    const tagsIncluded = selectedTags.filter(t => tagSet.has(t)).length > 0
+    return tagsIncluded
   }
 
   return <>{nodes.filter(hasTags).map(PreviewItem)}</>
