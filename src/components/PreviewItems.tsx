@@ -1,6 +1,7 @@
 import React from 'react'
-import { useStaticQuery, graphql, Link } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 import { Box, Text } from 'rebass'
+import { Link } from '.'
 
 const query = graphql`
   query PreviewItemsQuery {
@@ -21,7 +22,7 @@ const query = graphql`
     }
   }
 `
-interface INode {
+interface Node {
   excerpt: string
   frontmatter: {
     date: string
@@ -33,18 +34,18 @@ interface INode {
     slug: string
   }
 }
-interface IData {
+interface Data {
   allMdx: {
-    nodes: INode[]
+    nodes: Node[]
   }
 }
-interface IPreviewItems {
+interface PreviewItems {
   tags: string[]
 }
 
-const PreviewItem = (node: INode) => (
+const PreviewItem = (node: Node) => (
   <Box key={node.fields.slug} mb={4} color="white" width="100%">
-    <Link to={node.fields.slug}>
+    <Link to={node.fields.slug} color="accent" fontSize={3}>
       {node.frontmatter.title}
     </Link>
     <Text mt={2} color="subtitle">
@@ -52,18 +53,18 @@ const PreviewItem = (node: INode) => (
     </Text>
     <Text mt={2}>
       {node.frontmatter.preview.map(i => (
-        <Text>{i}</Text>
+        <Text key={i}>{i}</Text>
       ))}
     </Text>
   </Box>
 )
 
-const PreviewItems: React.FC<IPreviewItems> = ({ tags }) => {
+const PreviewItems: React.FC<PreviewItems> = ({ tags }) => {
   const {
     allMdx: { nodes }
-  }: IData = useStaticQuery(query)
+  }: Data = useStaticQuery(query)
 
-  const hasTags = (node: INode) => {
+  const hasTags = (node: Node) => {
     const tagSet = new Set(node.frontmatter.tags)
     const tagsIncluded = tags.filter(t => tagSet.has(t)).length > 0
     return tags.length === 0 || tagsIncluded
