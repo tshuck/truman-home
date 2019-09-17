@@ -40,6 +40,7 @@ interface Point {
 
 class Draw extends React.Component<{}, {}> {
   public static width: number = width
+
   public static top(el: React.RefObject<HTMLElement>): Point {
     if (el === null || !el.current) {
       return { x: 0, y: 0 }

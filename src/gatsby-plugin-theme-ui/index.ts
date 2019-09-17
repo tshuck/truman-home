@@ -1,6 +1,10 @@
 export interface Theme {
   colors: {
-    [k: string]: string
+    background: string
+    selection: string
+    white: string
+    accent: string
+    subtitle: string
   }
   fonts: {
     body: string

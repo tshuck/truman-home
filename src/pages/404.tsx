@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 import Container from '../components/Container'
 import Layout from '../layouts'
 
-const NotFoundPage = ({ location }: { location: object }) => (
+const NotFoundPage = ({ location }: { location: { pathname: string } }) => (
   <Layout location={location}>
     <Container>
       <h1>404: Page not found.</h1>

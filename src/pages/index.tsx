@@ -24,7 +24,7 @@ const query = graphql`
   }
 `
 
-const IndexPage = ({ location }: { location: object }) => {
+const IndexPage = ({ location }: { location: { pathname: string } }) => {
   const {
     allMdx: { group }
   }: Data = useStaticQuery(query)
