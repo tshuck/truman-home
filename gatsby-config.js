@@ -69,6 +69,7 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-mdx',
-    'gatsby-plugin-theme-ui'
+    'gatsby-plugin-theme-ui',
+    'gatsby-plugin-styled-components',
   ]
 }

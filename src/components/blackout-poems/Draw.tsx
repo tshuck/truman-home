@@ -1,9 +1,11 @@
 import * as React from 'react'
 import * as d3 from 'd3'
-import styled from '@emotion/styled'
+import styled from 'styled-components'
+
+const width = 690
 
 const SVG = styled.svg`
-  width: 690px;
+  width: ${width}px;
   height: 940px;
   margin: 2em auto;
   display: flex;
@@ -37,6 +39,8 @@ interface Point {
 }
 
 class Draw extends React.Component<{}, {}> {
+  public static width: number = width
+
   public static top(el: React.RefObject<HTMLElement>): Point {
     if (el === null || !el.current) {
       return { x: 0, y: 0 }
