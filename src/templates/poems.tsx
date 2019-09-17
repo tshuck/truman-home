@@ -3,11 +3,11 @@ import { graphql } from 'gatsby'
 import { Heading, Box } from 'rebass'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { Container } from '../components'
-import { IndexLayout } from '../layouts'
+import Layout from '../layouts'
 
 export default function PageTemplate({ data: { mdx } }) {
   return (
-    <IndexLayout>
+    <Layout>
       <Container>
         <Heading color="white" mt={3} mb={3}>
           {mdx.frontmatter.title}
@@ -16,7 +16,7 @@ export default function PageTemplate({ data: { mdx } }) {
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </Box>
       </Container>
-    </IndexLayout>
+    </Layout>
   )
 }
 

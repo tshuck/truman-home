@@ -31,11 +31,11 @@ const calculateTags = (tags: string[], clickedTag: string): string[] => {
   return [...tags, clickedTag]
 }
 
-interface ITags {
+interface Tags {
   tags: string[]
   setTags: (tags: string[]) => void
 }
-const Tags: React.FC<ITags> = ({ tags, setTags }) => {
+const Tags: React.FC<Tags> = ({ tags, setTags }) => {
   const {
     allMdx: { group }
   }: Data = useStaticQuery(query)
