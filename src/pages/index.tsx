@@ -34,7 +34,7 @@ const IndexPage = ({ location }: { location: { pathname: string } }) => {
   return (
     <Layout location={location}>
       <Container>
-        <Heading textAlign="center" fontSize={[6, 8]} color="white" m={5}>
+        <Heading textAlign="center" fontSize={[6, 8]} color="text" m={5}>
           Hello
         </Heading>
       </Container>
