@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Heading } from 'rebass'
+import { Heading, Text } from 'rebass'
 import { useStaticQuery, graphql } from 'gatsby'
 import { Container, PreviewItems, Tags } from '../components'
 import Layout from '../layouts'
@@ -42,9 +42,15 @@ const IndexPage = ({ location }: { location: { pathname: string } }) => {
   return (
     <Layout location={location}>
       <Container>
-        <Heading textAlign="center" fontSize={[6, 8]} color="text" m={5}>
+        <Heading textAlign="center" fontSize={[6, 8]} color="text" mt={5}>
           Hello
         </Heading>
+        <Text color="text" mt={5} mx={5}>
+          Some poetry. Maybe thoughts about existing in the world. Ideas about technology.
+        </Text>
+        <Text color="text" mb={5} mx={5}>
+          Site title from e.e. cummings' <i>who are you,little i</i>.
+        </Text>
       </Container>
       <Container>
         <Tags availableTags={availableTags} selectedTags={selectedTags} setSelectedTags={setSelectedTags} />

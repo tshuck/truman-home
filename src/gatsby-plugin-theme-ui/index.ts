@@ -115,7 +115,7 @@ const theme: Theme = {
     background: '#073642',
     text: '#fdf6e3',
     accent: '#b58900',
-    subtitle: '#839496',
+    subtitle: '#eee8d5',
     modes: {
       light: {
         foreground: '#eee8d5',
