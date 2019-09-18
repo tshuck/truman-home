@@ -65,7 +65,7 @@ const Layout: React.FC<Layout> = ({ children, minWidth }) => {
           <Content minWidth={minWidth}>
             <Heading
               width="100%"
-              p={2}
+              py={2}
               sx={{
                 borderBottomWidth: '1px',
                 borderBottomStyle: 'solid',
