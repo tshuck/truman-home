@@ -1,7 +1,8 @@
 import * as React from 'react'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
-import { Heading, Box, Flex } from 'rebass'
+import { Heading, Box, Button, Flex } from 'rebass'
+import { useColorMode } from 'theme-ui'
 import { Link } from '../components'
 import 'modern-normalize'
 
@@ -18,7 +19,7 @@ const Content: React.FC<Content> = ({ children, minWidth }) => (
       minWidth: minWidth ? `${minWidth}px` : 'inherit'
     }}
     color="foreground"
-    bg="selection"
+    bg="background"
     flexDirection="column"
     width="100%"
   >
@@ -33,14 +34,13 @@ interface Layout {
   minWidth?: number
 }
 
-const Layout: React.FC<Layout> = ({ location, children, minWidth }) => {
-  const backButton = (
-    <Link to="/" fontSize={4} color="accent">
-      Back
-    </Link>
+const Layout: React.FC<Layout> = ({ children, minWidth }) => {
+  const [colorMode, setColorMode] = useColorMode()
+  const colorModeButton = (
+    <Button variant="outline" ml={1} onClick={() => setColorMode(colorMode === 'light' ? 'default' : 'light')} sx={{ cursor: 'pointer' }}>
+      {colorMode === 'light' ? 'Dark' : 'Light'}
+    </Button>
   )
-  const isRoot = location && location.pathname === '/'
-
   return (
     <StaticQuery
       query={graphql`
@@ -54,7 +54,7 @@ const Layout: React.FC<Layout> = ({ location, children, minWidth }) => {
         }
       `}
       render={(data: GraphQL.data) => (
-        <Box bg="background">
+        <Box bg="foreground">
           <Helmet
             title={data.site.siteMetadata.title}
             meta={[
@@ -65,18 +65,18 @@ const Layout: React.FC<Layout> = ({ location, children, minWidth }) => {
           <Content minWidth={minWidth}>
             <Heading
               width="100%"
-              p={2}
+              py={2}
               sx={{
                 borderBottomWidth: '1px',
                 borderBottomStyle: 'solid',
-                borderBottomColor: 'white'
+                borderBottomColor: 'text'
               }}
             >
               <Flex justifyContent="space-between">
                 <Link to="/" fontSize={4} color="accent">
                   {data.site.siteMetadata.title}
                 </Link>
-                {isRoot ? '' : backButton}
+                {colorModeButton}
               </Flex>
             </Heading>
 
