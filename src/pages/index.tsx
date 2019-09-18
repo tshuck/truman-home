@@ -36,7 +36,9 @@ const IndexPage = ({ location }: { location: { pathname: string } }) => {
 
   const setSelectedTags = (tags: string[]) => {
     setSelectedTagsState(tags)
-    localStorage.setItem('selectedTags', JSON.stringify(tags))
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('selectedTags', JSON.stringify(tags))
+    }
   }
 
   return (
