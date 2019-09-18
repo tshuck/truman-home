@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Flex, Text } from 'rebass'
+import { Flex, Text } from 'rebass'
 import { Label, Checkbox } from '@rebass/forms'
 
 const calculateTags = (tags: string[], clickedTag: string): string[] => {
@@ -21,7 +21,7 @@ const Tags: React.FC<Tags> = ({ availableTags, selectedTags, setSelectedTags }) 
     const isSelected = selectedTags.includes(tag)
 
     return (
-      <Label key={tag} alignItems="center" color="white" sx={{ cursor: 'pointer' }}>
+      <Label key={tag} alignItems="center" color="text" sx={{ cursor: 'pointer' }}>
         <Checkbox name="tags" onChange={onClick} checked={isSelected} />
         {tag}
       </Label>
@@ -30,11 +30,8 @@ const Tags: React.FC<Tags> = ({ availableTags, selectedTags, setSelectedTags }) 
 
   return (
     <>
-      <Flex color="white" mb={1} justifyContent="space-between">
-        <Text fontSize={3}>Filter by Tag</Text>
-        <Button variant="outline" ml={1} onClick={() => setSelectedTags([])} sx={{ cursor: 'pointer' }}>
-          clear
-        </Button>
+      <Flex color="text" mb={1} justifyContent="space-between">
+        <Text fontSize={3}>Tags</Text>
       </Flex>
       <Flex justifyContent="center" mb={5}>
         {tagButtons}
