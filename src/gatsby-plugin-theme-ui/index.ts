@@ -1,10 +1,15 @@
+type Colors = {
+  background: string
+  foreground: string
+  text: string
+  accent: string
+  subtitle: string
+}
 export interface Theme {
-  colors: {
-    background: string
-    selection: string
-    white: string
-    accent: string
-    subtitle: string
+  colors: Colors & {
+    modes: {
+      light: Colors
+    }
   }
   fonts: {
     body: string
@@ -106,11 +111,20 @@ export interface Theme {
 
 const theme: Theme = {
   colors: {
-    background: '#002B36',
-    selection: '#073642',
-    white: '#fdf6e3',
+    foreground: '#002B36',
+    background: '#073642',
+    text: '#fdf6e3',
     accent: '#b58900',
-    subtitle: '#eee8d5'
+    subtitle: '#839496',
+    modes: {
+      light: {
+        foreground: '#eee8d5',
+        background: '#fdf6e3',
+        text: '#586e75',
+        accent: '#b58900',
+        subtitle: '#657b83',
+      }
+    }
   },
   fonts: {
     body: 'system-ui, sans-serif',
@@ -192,7 +206,7 @@ const theme: Theme = {
     },
     outline: {
       variant: 'buttons.primary',
-      color: 'primary',
+      color: 'text',
       bg: 'transparent',
       boxShadow: 'inset 0 0 2px'
     },
