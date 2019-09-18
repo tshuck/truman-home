@@ -30,7 +30,10 @@ const IndexPage = ({ location }: { location: { pathname: string } }) => {
   }: Data = useStaticQuery(query)
   const availableTags = group.map(g => g.tag)
 
-  const storedTags = localStorage.getItem('selectedTags')
+  let storedTags: string | null = null
+  if (typeof window !== 'undefined') {
+    storedTags = localStorage.getItem('selectedTags')
+  }
   const startingTags = (storedTags && JSON.parse(storedTags)) || availableTags
   const [selectedTags, setSelectedTagsState] = useState<string[]>(startingTags)
 
