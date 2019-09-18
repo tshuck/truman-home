@@ -29,7 +29,15 @@ const IndexPage = ({ location }: { location: { pathname: string } }) => {
     allMdx: { group }
   }: Data = useStaticQuery(query)
   const availableTags = group.map(g => g.tag)
-  const [selectedTags, setSelectedTags] = useState<string[]>(availableTags)
+
+  const storedTags = localStorage.getItem('selectedTags')
+  const startingTags = (storedTags && JSON.parse(storedTags)) || availableTags
+  const [selectedTags, setSelectedTagsState] = useState<string[]>(startingTags)
+
+  const setSelectedTags = (tags: string[]) => {
+    setSelectedTagsState(tags)
+    localStorage.setItem('selectedTags', JSON.stringify(tags))
+  }
 
   return (
     <Layout location={location}>

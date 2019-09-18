@@ -1,4 +1,4 @@
-type Colors = {
+interface Colors {
   background: string
   foreground: string
   text: string
@@ -122,7 +122,7 @@ const theme: Theme = {
         background: '#fdf6e3',
         text: '#586e75',
         accent: '#b58900',
-        subtitle: '#657b83',
+        subtitle: '#657b83'
       }
     }
   },
