@@ -37,7 +37,7 @@ interface Layout {
 const Layout: React.FC<Layout> = ({ children, minWidth }) => {
   const [colorMode, setColorMode] = useColorMode()
   const colorModeButton = (
-    <Button variant="primary" ml={1} onClick={() => setColorMode(colorMode === 'light' ? 'default' : 'light')} sx={{ cursor: 'pointer' }}>
+    <Button variant="outline" ml={1} onClick={() => setColorMode(colorMode === 'light' ? 'default' : 'light')} sx={{ cursor: 'pointer' }}>
       {colorMode === 'light' ? 'Dark' : 'Light'}
     </Button>
   )
@@ -68,7 +68,7 @@ const Layout: React.FC<Layout> = ({ children, minWidth }) => {
                 <Link
                   to="/"
                   fontSize={4}
-                  color="text"
+                  color="accent"
                   style={{
                     textDecoration: 'none'
                   }}
@@ -78,8 +78,6 @@ const Layout: React.FC<Layout> = ({ children, minWidth }) => {
                 {colorModeButton}
               </Flex>
             </Heading>
-            {/* <Box as="hr" my={2} bg="hr" height="2px" sx={{ border: 'none' }} /> */}
-
             {children}
           </Content>
         </Box>
