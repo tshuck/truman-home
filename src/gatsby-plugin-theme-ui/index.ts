@@ -120,27 +120,15 @@ const theme: Theme = {
     subtitle: '#eee8d5',
     muted: '#A0AEC0',
     hr: '#4A5568',
-    // foreground: '#002B36',
-    // background: '#073642',
-    // text: '#fdf6e3',
-    // accent: '#b58900',
-    // subtitle: '#eee8d5',
     modes: {
-      // light: {
-      //   foreground: '#eee8d5',
-      //   background: '#fdf6e3',
-      //   text: '#586e75',
-      //   accent: '#b58900',
-      //   subtitle: '#657b83'
-      // }
       light: {
-        foreground: '#eee8d5',
-        background: '#fdf6e3',
-        text: '#586e75',
-        accent: '#b58900',
+        foreground: '#EDF2F7',
+        background: '#F7FAFC',
+        text: '#4A5568',
+        accent: '#319795',
         subtitle: '#657b83',
-        muted: '#CBD5E0',
-        hr: '#4A5568'
+        muted: '#718096',
+        hr: '#CBD5E0'
       }
     }
   },
@@ -218,8 +206,8 @@ const theme: Theme = {
     primary: {
       fontSize: 2,
       fontWeight: 'bold',
-      color: 'background',
-      bg: 'primary',
+      color: 'text',
+      bg: 'accent',
       borderRadius: 'default'
     },
     outline: {
