@@ -37,7 +37,7 @@ interface Layout {
 const Layout: React.FC<Layout> = ({ children, minWidth }) => {
   const [colorMode, setColorMode] = useColorMode()
   const colorModeButton = (
-    <Button variant="outline" ml={1} onClick={() => setColorMode(colorMode === 'light' ? 'default' : 'light')} sx={{ cursor: 'pointer' }}>
+    <Button variant="primary" ml={1} onClick={() => setColorMode(colorMode === 'light' ? 'default' : 'light')} sx={{ cursor: 'pointer' }}>
       {colorMode === 'light' ? 'Dark' : 'Light'}
     </Button>
   )
@@ -54,7 +54,7 @@ const Layout: React.FC<Layout> = ({ children, minWidth }) => {
         }
       `}
       render={(data: GraphQL.data) => (
-        <Box bg="foreground">
+        <Box bg="background">
           <Helmet
             title={data.site.siteMetadata.title}
             meta={[
@@ -63,22 +63,22 @@ const Layout: React.FC<Layout> = ({ children, minWidth }) => {
             ]}
           />
           <Content minWidth={minWidth}>
-            <Heading
-              width="100%"
-              py={2}
-              sx={{
-                borderBottomWidth: '1px',
-                borderBottomStyle: 'solid',
-                borderBottomColor: 'text'
-              }}
-            >
+            <Heading width="100%" py={3}>
               <Flex justifyContent="space-between">
-                <Link to="/" fontSize={4} color="accent">
+                <Link
+                  to="/"
+                  fontSize={4}
+                  color="text"
+                  style={{
+                    textDecoration: 'none'
+                  }}
+                >
                   {data.site.siteMetadata.title}
                 </Link>
                 {colorModeButton}
               </Flex>
             </Heading>
+            {/* <Box as="hr" my={2} bg="hr" height="2px" sx={{ border: 'none' }} /> */}
 
             {children}
           </Content>

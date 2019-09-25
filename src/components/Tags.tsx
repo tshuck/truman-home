@@ -1,5 +1,6 @@
 import React from 'react'
-import { Flex, Text } from 'rebass'
+import { Sliders } from 'react-feather'
+import { Box, Flex } from 'rebass'
 import { Label, Checkbox } from '@rebass/forms'
 
 const calculateTags = (tags: string[], clickedTag: string): string[] => {
@@ -21,22 +22,26 @@ const Tags: React.FC<Tags> = ({ availableTags, selectedTags, setSelectedTags }) 
     const isSelected = selectedTags.includes(tag)
 
     return (
-      <Label key={tag} alignItems="center" color="text" sx={{ cursor: 'pointer' }}>
-        <Checkbox name="tags" onChange={onClick} checked={isSelected} />
+      <Label key={tag} alignItems="center" color="text" mx={2} width="auto" sx={{ cursor: 'pointer' }}>
+        <Checkbox name="tags" onChange={onClick} checked={isSelected} color="accent" />
         {tag}
       </Label>
     )
   })
 
   return (
-    <>
-      <Flex color="text" mb={1} justifyContent="space-between">
-        <Text fontSize={3}>Tags</Text>
+    <Box mb={5}>
+      <Flex justifyContent="space-between" pb={3}>
+        <Flex fontSize={2} color="muted" alignItems="center">
+          <Sliders size={18} />
+          <Box px={2}>Filter By:</Box>
+        </Flex>
+        <Flex justifyContent="flex-end" flex="1 1 0%">
+          {tagButtons}
+        </Flex>
       </Flex>
-      <Flex justifyContent="center" mb={5}>
-        {tagButtons}
-      </Flex>
-    </>
+      <Box as="hr" my={2} bg="hr" height="2px" sx={{ border: 'none' }} />
+    </Box>
   )
 }
 
