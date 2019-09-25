@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { Heading, Text } from 'rebass'
+import { Box, Heading, Text } from 'rebass'
 import { useStaticQuery, graphql } from 'gatsby'
-import { Container, PreviewItems, Tags } from '../components'
+import { PreviewItems, Tags } from '../components'
 import Layout from '../layouts'
 
 interface Group {
@@ -46,23 +46,20 @@ const IndexPage = ({ location }: { location: { pathname: string } }) => {
 
   return (
     <Layout location={location}>
-      <Container>
-        <Heading textAlign="center" fontSize={[6, 8]} color="text" mt={5}>
-          Hello
+      <Box py={4}>
+        <Heading fontSize={[4, 5, 6]} color="text" my={3}>
+          Hello.
         </Heading>
-        <Text color="text" mt={5} mx={5}>
+        <Text color="muted" fontSize={[3, 4, 5]} my={3}>
           Some poetry. Maybe thoughts about existing in the world. Ideas about technology.
         </Text>
-        <Text color="text" mb={5} mx={5}>
-          Site title from e.e. cummings' <i>who are you,little i</i>.
+        <Text color="muted" fontSize={[0, 1, 2]} my={3}>
+          Site title from e.e. cummings' <i>who are you, little i</i>.
         </Text>
-      </Container>
-      <Container>
-        <Tags availableTags={availableTags} selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
-      </Container>
-      <Container>
-        <PreviewItems selectedTags={selectedTags} />
-      </Container>
+      </Box>
+
+      <Tags availableTags={availableTags} selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
+      <PreviewItems selectedTags={selectedTags} />
     </Layout>
   )
 }

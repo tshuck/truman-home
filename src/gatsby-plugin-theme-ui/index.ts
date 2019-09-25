@@ -4,6 +4,8 @@ interface Colors {
   text: string
   accent: string
   subtitle: string
+  muted: string
+  hr: string
 }
 export interface Theme {
   colors: Colors & {
@@ -111,18 +113,22 @@ export interface Theme {
 
 const theme: Theme = {
   colors: {
-    foreground: '#002B36',
-    background: '#073642',
-    text: '#fdf6e3',
-    accent: '#b58900',
+    foreground: '#2D3748',
+    background: '#1A202C',
+    text: '#CBD5E0',
+    accent: '#319795',
     subtitle: '#eee8d5',
+    muted: '#A0AEC0',
+    hr: '#4A5568',
     modes: {
       light: {
-        foreground: '#eee8d5',
-        background: '#fdf6e3',
-        text: '#586e75',
-        accent: '#b58900',
-        subtitle: '#657b83'
+        foreground: '#EDF2F7',
+        background: '#F7FAFC',
+        text: '#4A5568',
+        accent: '#319795',
+        subtitle: '#657b83',
+        muted: '#718096',
+        hr: '#CBD5E0'
       }
     }
   },
@@ -200,13 +206,13 @@ const theme: Theme = {
     primary: {
       fontSize: 2,
       fontWeight: 'bold',
-      color: 'background',
-      bg: 'primary',
+      color: 'text',
+      bg: 'accent',
       borderRadius: 'default'
     },
     outline: {
       variant: 'buttons.primary',
-      color: 'text',
+      color: 'accent',
       bg: 'transparent',
       boxShadow: 'inset 0 0 2px'
     },

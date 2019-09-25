@@ -15,7 +15,7 @@ const fromTheme = <K extends keyof Theme>(property: keyof Theme, value?: keyof T
 }
 
 interface LinkInterface extends GatsbyLinkProps<{}> {
-  color: keyof Theme['colors']
+  color?: keyof Theme['colors']
   fontSize?: number
 }
 // Styling Gatsby's `Link` property is kind of hard with
