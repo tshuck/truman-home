@@ -54,7 +54,7 @@ const Layout: React.FC<Layout> = ({ children, minWidth }) => {
         }
       `}
       render={(data: GraphQL.data) => (
-        <Box bg="foreground">
+        <Box bg="background">
           <Helmet
             title={data.site.siteMetadata.title}
             meta={[
@@ -63,23 +63,21 @@ const Layout: React.FC<Layout> = ({ children, minWidth }) => {
             ]}
           />
           <Content minWidth={minWidth}>
-            <Heading
-              width="100%"
-              py={2}
-              sx={{
-                borderBottomWidth: '1px',
-                borderBottomStyle: 'solid',
-                borderBottomColor: 'text'
-              }}
-            >
+            <Heading width="100%" py={3}>
               <Flex justifyContent="space-between">
-                <Link to="/" fontSize={4} color="accent">
+                <Link
+                  to="/"
+                  fontSize={4}
+                  color="accent"
+                  style={{
+                    textDecoration: 'none'
+                  }}
+                >
                   {data.site.siteMetadata.title}
                 </Link>
                 {colorModeButton}
               </Flex>
             </Heading>
-
             {children}
           </Content>
         </Box>

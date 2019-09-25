@@ -1,6 +1,7 @@
 import React from 'react'
+// import { ArrowRight } from 'react-feather'
 import { useStaticQuery, graphql } from 'gatsby'
-import { Flex, Box, Text } from 'rebass'
+import { Box, Button, Text } from 'rebass'
 import { Link } from '.'
 
 const query = graphql`
@@ -44,36 +45,28 @@ interface PreviewItems {
 
 const PreviewItem = (node: Node) => (
   <Box key={node.fields.slug} mb={4} color="text" width="100%">
-    <Flex justifyContent="space-between" flexDirection={['column', 'row']}>
-      <Link to={node.fields.slug} color="accent" fontSize={3}>
+    <Link to={node.fields.slug} style={{ textDecoration: 'none' }}>
+      <Box as="span" color="text" fontSize={4} sx={{ fontWeight: 'bold' }}>
         {node.frontmatter.title}
-      </Link>
-      <Text mt={2} color="subtitle">
-        {node.frontmatter.published}
+      </Box>
+    </Link>
+    <Text fontSize={1} my={2} color="muted">
+      Written: {node.frontmatter.published}
+    </Text>
+    <Box bg="foreground" my={3} p={3} sx={{ borderRadius: 4 }}>
+      <Text mt={2} ml={2}>
+        {node.frontmatter.preview.map(i => (
+          <Text key={i}>{i}</Text>
+        ))}
       </Text>
-    </Flex>
-    <Text mt={2} color="subtitle">
-      <i>Excerpt:</i>
-    </Text>
-    <Text mt={2} ml={2}>
-      {node.frontmatter.preview.map(i => (
-        <Text key={i}>{i}</Text>
-      ))}
-    </Text>
-    <Box mt={2}>
-      <Link to={node.fields.slug} color="accent" fontSize={1}>
-        Read more
+    </Box>
+    <Box my={2}>
+      <Link to={node.fields.slug} color="accent" fontSize={2} style={{ textDecoration: 'none' }}>
+        <Button variant="outline" sx={{cursor: 'pointer'}}>
+          Read More
+        </Button>
       </Link>
     </Box>
-    <Box
-      mx={[6, 7]}
-      py={3}
-      sx={{
-        borderBottomWidth: '1px',
-        borderBottomStyle: 'solid',
-        borderBottomColor: 'text'
-      }}
-    />
   </Box>
 )
 
