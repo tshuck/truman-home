@@ -48,7 +48,7 @@ const IndexPage = ({ location }: { location: { pathname: string } }) => {
     <Layout location={location}>
       <Box py={4}>
         <Heading fontSize={[4, 5, 6]} color="text" my={3}>
-          Hello!
+          Hello.
         </Heading>
         <Text color="muted" fontSize={[3, 4, 5]} my={3}>
           Some poetry. Maybe thoughts about existing in the world. Ideas about technology.
