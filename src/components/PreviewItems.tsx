@@ -1,5 +1,4 @@
 import React from 'react'
-// import { ArrowRight } from 'react-feather'
 import { useStaticQuery, graphql } from 'gatsby'
 import { Box, Button, Text } from 'rebass'
 import { Link } from '.'
@@ -51,10 +50,10 @@ const PreviewItem = (node: Node) => (
       </Box>
     </Link>
     <Text fontSize={1} my={2} color="muted">
-      Written: {node.frontmatter.published}
+      <i>{node.frontmatter.published}</i>
     </Text>
     <Box bg="foreground" my={3} p={3} sx={{ borderRadius: 4 }}>
-      <Text mt={2} ml={2}>
+      <Text>
         {node.frontmatter.preview.map(i => (
           <Text key={i}>{i}</Text>
         ))}

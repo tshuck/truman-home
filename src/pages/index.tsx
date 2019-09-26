@@ -51,15 +51,17 @@ const IndexPage = ({ location }: { location: { pathname: string } }) => {
           Hello.
         </Heading>
         <Text color="muted" fontSize={[3, 4, 5]} my={3}>
-          Some poetry. Maybe thoughts about existing in the world. Ideas about technology.
-        </Text>
-        <Text color="muted" fontSize={[0, 1, 2]} my={3}>
-          Site title from e.e. cummings' <i>who are you, little i</i>.
+          Here is some poetry. Maybe thoughts about existing in the world. Ideas about technology.
         </Text>
       </Box>
 
       <Tags availableTags={availableTags} selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
       <PreviewItems selectedTags={selectedTags} />
+
+      <Box as="hr" my={2} bg="hr" height="2px" sx={{ border: 'none' }} />
+      <Text color="muted" fontSize={[0, 1, 2]} my={3}>
+        Thanks for your time &amp; attention. Site title from e.e. cummings' <i>who are you, little i</i>.
+      </Text>
     </Layout>
   )
 }
