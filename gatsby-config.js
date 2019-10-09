@@ -71,5 +71,17 @@ module.exports = {
     'gatsby-plugin-mdx',
     'gatsby-plugin-theme-ui',
     'gatsby-plugin-styled-components',
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: `Truman Shuck`,
+        short_name: `Truman Shuck`,
+        start_url: `/`,
+        background_color: `#1A202C`,
+        theme_color: `#319795`,
+        display: `standalone`,
+        icon: `src/images/favicon.png`
+      },
+    }
   ]
 }
