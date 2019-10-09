@@ -52,6 +52,9 @@ const PreviewItem = (node: Node) => (
     <Text fontSize={1} my={2} color="muted">
       <i>{node.frontmatter.published}</i>
     </Text>
+    <Text fontSize={1} my={2} color="muted">
+      {node.frontmatter.tags.join(', ')}
+    </Text>
     <Box bg="foreground" my={3} p={3} sx={{ borderRadius: 4 }}>
       <Text>
         {node.frontmatter.preview.map(i => (
