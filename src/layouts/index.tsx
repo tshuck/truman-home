@@ -1,5 +1,5 @@
 import * as React from 'react'
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 import { Heading, Box, Button, Flex } from 'rebass'
 import { useColorMode } from 'theme-ui'
