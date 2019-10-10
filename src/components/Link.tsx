@@ -1,5 +1,5 @@
 import { Link, GatsbyLinkProps } from 'gatsby'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import theme, { Theme } from '../gatsby-plugin-theme-ui'
 
 const fromTheme = <K extends keyof Theme>(property: keyof Theme, value?: keyof Theme[K] | number) => {
