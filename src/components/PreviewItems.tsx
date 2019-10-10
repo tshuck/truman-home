@@ -50,9 +50,6 @@ const PreviewItem = (node: Node) => (
       </Box>
     </Link>
     <Text fontSize={1} my={2} color="muted">
-      <i>{node.frontmatter.published}</i>
-    </Text>
-    <Text fontSize={1} my={2} color="muted">
       {node.frontmatter.tags.join(', ')}
     </Text>
     <Box bg="foreground" my={3} p={3} sx={{ borderRadius: 4 }}>
@@ -64,7 +61,7 @@ const PreviewItem = (node: Node) => (
     </Box>
     <Box my={2}>
       <Link to={node.fields.slug} style={{ textDecoration: 'none' }}>
-        <Button variant="outline" sx={{cursor: 'pointer'}}>
+        <Button variant="outline" sx={{ cursor: 'pointer' }}>
           Read More
         </Button>
       </Link>

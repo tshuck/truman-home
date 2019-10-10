@@ -35,9 +35,7 @@ const Tags: React.FC<Tags> = ({ availableTags, selectedTags, setSelectedTags }) 
         <Sliders size={18} />
         <Box px={2}>Filter By</Box>
       </Flex>
-      <Flex flexWrap="wrap">
-        {tagButtons}
-      </Flex>
+      <Flex flexWrap="wrap">{tagButtons}</Flex>
       <Box as="hr" my={2} bg="hr" height="2px" sx={{ border: 'none' }} />
     </Box>
   )

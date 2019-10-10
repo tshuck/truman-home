@@ -28,7 +28,7 @@ export default function PageTemplate({ location, data: { mdx } }: PageTemplate) 
         <Heading color="text" mt={3} mb={3}>
           {mdx.frontmatter.title}
         </Heading>
-        <Box color="text" sx={{ minHeight: '100vh', minWidth: '' }}>
+        <Box color="text" mb={5} sx={{ minHeight: '100vh', minWidth: '' }}>
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </Box>
       </Container>
