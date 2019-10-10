@@ -63,7 +63,7 @@ const PreviewItem = (node: Node) => (
       </Text>
     </Box>
     <Box my={2}>
-      <Link to={node.fields.slug} color="accent" fontSize={2} style={{ textDecoration: 'none' }}>
+      <Link to={node.fields.slug} style={{ textDecoration: 'none' }}>
         <Button variant="outline" sx={{cursor: 'pointer'}}>
           Read More
         </Button>
