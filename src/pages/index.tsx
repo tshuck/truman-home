@@ -47,11 +47,11 @@ const IndexPage = ({ location }: { location: { pathname: string } }) => {
   return (
     <Layout location={location}>
       <Box py={4}>
-        <Heading fontSize={[4, 5, 6]} color="text" my={3}>
+        <Heading fontSize={[6, 7, 8]} color="text" my={3}>
           Hello.
         </Heading>
         <Text color="muted" fontSize={[3, 4, 5]} my={3}>
-          Here is some poetry. Maybe thoughts about existing in the world. Ideas about technology.
+          Here is some poetry. Thoughts about existing in the world. Ideas about technology.
         </Text>
       </Box>
 

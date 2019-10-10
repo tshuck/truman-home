@@ -63,11 +63,10 @@ const Layout: React.FC<Layout> = ({ children, minWidth }) => {
             ]}
           />
           <Content minWidth={minWidth}>
-            <Heading width="100%" py={3}>
+            <Heading width="100%" py={3} fontSize={[3,4,5]}>
               <Flex justifyContent="space-between">
                 <Link
                   to="/"
-                  fontSize={4}
                   color="accent"
                   style={{
                     textDecoration: 'none'
