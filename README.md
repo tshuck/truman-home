@@ -10,7 +10,6 @@ Uses
 
   - [Rebass](https://rebassjs.org/)
   - [Theme UI](https://theme-ui.com/)
-  - [Styled Components](https://www.styled-components.com/)
   - [MDX](https://mdxjs.com/getting-started/gatsby)
   - Solarized Light & Dark
 
