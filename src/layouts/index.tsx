@@ -1,5 +1,5 @@
 import * as React from 'react'
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 import { Heading, Box, Button, Flex } from 'rebass'
 import { useColorMode } from 'theme-ui'
@@ -63,12 +63,10 @@ const Layout: React.FC<Layout> = ({ children, minWidth }) => {
             ]}
           />
           <Content minWidth={minWidth}>
-            <Heading width="100%" py={3}>
-              <Flex justifyContent="space-between">
+            <Heading width="100%" py={3} fontSize={[3, 4, 5]} color="accent">
+              <Flex justifyContent="space-between" alignItems="center">
                 <Link
                   to="/"
-                  fontSize={4}
-                  color="accent"
                   style={{
                     textDecoration: 'none'
                   }}
