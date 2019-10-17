@@ -8,16 +8,14 @@ type Props = {
   size: number
 }
 const Icon: React.FC<Props> = ({ icon, color, size }) => {
-  const StyledIcon = styled(icon)<{theme?: Theme}>(
-    props => ({
-      height: `${props.theme.space[size]}px`,
-      width: 'auto',
-      fill: props.theme.colors[color],
-      '& *': {
-        fill: props.theme.colors[color]
-      }
-    })
-  )
+  const StyledIcon = styled(icon)<{ theme?: Theme }>(props => ({
+    height: `${props.theme.space[size]}px`,
+    width: 'auto',
+    fill: props.theme.colors[color],
+    '& *': {
+      fill: props.theme.colors[color]
+    }
+  }))
 
   return <StyledIcon />
 }
