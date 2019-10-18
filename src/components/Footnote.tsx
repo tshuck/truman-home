@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, LinkProps } from 'rebass'
 
-export default (props: LinkProps) => {
+const Footnote: React.FC<LinkProps> = (props: LinkProps) => {
   const { children, ...rest } = props
   return (
     <Link {...rest} sx={{ verticalAlign: 'super' }} fontSize={1} color="accent">
@@ -9,3 +9,5 @@ export default (props: LinkProps) => {
     </Link>
   )
 }
+
+export default Footnote

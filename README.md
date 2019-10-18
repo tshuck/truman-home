@@ -11,7 +11,7 @@ Uses
   - [Rebass](https://rebassjs.org/)
   - [Theme UI](https://theme-ui.com/)
   - [MDX](https://mdxjs.com/getting-started/gatsby)
-  - Solarized Light & Dark
+  - [The Noun Project](https://thenounproject.com/)
 
 # commands
 
