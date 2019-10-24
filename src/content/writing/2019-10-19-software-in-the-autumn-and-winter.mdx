@@ -85,28 +85,40 @@ I think that Basecamp's ideas on <Link href="https://basecamp.com/shapeup/4.2-ap
   <Link href="#foot-1" color="accent">
     1:
   </Link>{' '}
-  As my cat mewls his request for cat-breakfast while pawing at my nose. As my cat squawks from the floor that I re-angle my chair so that he can hop on my lap. As my cat, a creature of no short-term memory, wanders the darkened halls of my apartment; believing himself abandoned to a world he does not know and loudly complaining to me, still present, mysteriously hidden in the office. There is apparently one small, ineffectual god of my house. His name is <i>Catballs</i>.
+  As my cat mewls his request for cat-breakfast while pawing at my nose. As my cat squawks from the floor that I re-angle my chair so that
+  he can hop on my lap. As my cat, a creature of no short-term memory, wanders the darkened halls of my apartment; believing himself
+  abandoned to a world he does not know and loudly complaining to me, still present, mysteriously hidden in the office. There is apparently
+  one small, ineffectual god of my house. His name is <i>Catballs</i>.
 </Text>
 
 <Text color="muted" id="2" mb={2}>
   <Link href="#foot-2" color="accent">
     2:
   </Link>{' '}
-  Except maybe for the folks in robotics whose creations are at least partially real. When they say "jump," their creation asks its magnetic brain "how many bits?"
+  Except maybe for the folks in robotics whose creations are at least partially real. When they say "jump," their creation asks its magnetic
+  brain "how many bits?"
 </Text>
 
 <Text color="muted" id="3" mb={2}>
   <Link href="#foot-3" color="accent">
     3:
   </Link>{' '}
-  No one achieves anything alone<Footnote id="foot-4" href="#4">4</Footnote>. I've been kicking this idea around with other folks at <i>Hatch</i>, any of whom have as much claim to write their own post. As long as they cite me, similarly vaguely, in a footnote.
+  No one achieves anything alone
+  <Footnote id="foot-4" href="#4">
+    4
+  </Footnote>
+  . I've been kicking this idea around with other folks at <i>Hatch</i>, any of whom have as much claim to write their own post. As long as
+  they cite me, similarly vaguely, in a footnote.
 </Text>
 
 <Text color="muted" id="4" mb={2}>
   <Link href="#foot-4" color="accent">
     4:
   </Link>{' '}
-  Seen again as I coopt Leslie Knope of "Parks and Recreation."<Footnote id="foot-5" href="#5">5</Footnote>
+  Seen again as I coopt Leslie Knope of "Parks and Recreation."
+  <Footnote id="foot-5" href="#5">
+    5
+  </Footnote>
 </Text>
 
 <Text color="muted" id="5" mb={2}>
@@ -129,7 +141,8 @@ I think that Basecamp's ideas on <Link href="https://basecamp.com/shapeup/4.2-ap
   </Link>{' '}
   Some detail feels appropriate in order to not remain entirely abstract. In our first iteration of limiting engagement with a promotion (<i>maximum 5 uses per customer</i>), we developed a model that we called a "Tracker." The Tracker was responsible both for recording the fulfillment of a promotion, as well as optionally enforcing the limitation. Eventually it became apparent that these were two very separate responsibilities.
 
-  Marketing folks wanted all of their promotions <i>tracked</i>, but only some <i>limited</i>, and our system was having to manage the former by attaching a Tracker to every promotion regardless of the desire to limit. We refactored the orchestration of the <i>Engine</i> so that it would implicitly track engagement, and introduced a model, the <i>Limiter</i>, which could be created only when needed. This involved some data-backfills to remove <i>Trackers</i> entirely, and keep the other bits of accumulated state in our system all in order.
+Marketing folks wanted all of their promotions <i>tracked</i>, but only some <i>limited</i>, and our system was having to manage the former by attaching a Tracker to every promotion regardless of the desire to limit. We refactored the orchestration of the <i>Engine</i> so that it would implicitly track engagement, and introduced a model, the <i>Limiter</i>, which could be created only when needed. This involved some data-backfills to remove <i>Trackers</i> entirely, and keep the other bits of accumulated state in our system all in order.
+
 </Text>
 
 <Text color="muted" id="8" mb={2}>
