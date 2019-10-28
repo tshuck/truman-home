@@ -2,7 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { Colors, Theme } from '../gatsby-plugin-theme-ui'
 
-type Props = {
+interface Props {
   icon: React.ComponentType
   color: keyof Colors
   size: number
