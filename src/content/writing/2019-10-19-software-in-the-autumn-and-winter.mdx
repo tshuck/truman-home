@@ -3,9 +3,10 @@ title: 'Software in the Autumn and Winter'
 published: '2019-10-19'
 tags: ['thoughts on technology']
 preview: [
-  "A system of software can not grow forever;",
-  "it eventually must be allowed to pass in the winter",
-  "and be re-born in the spring."
+  "A system of software that grows unceasingly",
+  "becomes gnarled by past decisions;",
+  "it must be allowed to succumb to a winter frost",
+  "so that it may grow unencumbered in the spring."
 ]
 ---
 
@@ -18,7 +19,7 @@ import OrigamiSquirrelOutline from '../../images/origami-squirrel-outline.svg'
 
 #### A Sentence
 
-A system of software can not grow forever; it eventually must be allowed to pass in the winter and be re-born in the spring.
+A system of software that grows unceasingly becomes gnarled by past decisions; it must be allowed to succumb to a winter frost so that it may grow unencumbered in the spring.
 
 <Box display="flex" alignItems="center" justifyContent="center">
   <Icon icon={OrigamiSquirrelOutline} color="muted" size={6} />
@@ -26,7 +27,7 @@ A system of software can not grow forever; it eventually must be allowed to pass
 
 #### A Paragraph
 
-I have a new metaphor: eventually a well-worked codebase begins to feel like a tangled summer garden. We have one, a _Rules Engine_, that has begun to feel much more _grown_ than _planned_. We've taken a responsible, refactored approach to extending it -- but we have begun to feel the constricting weight of past decisions. It may feel more comfortable to life perpetually in the growing season, but with a stable product we might find value in planning an autumn and weathering a winter. And re-writing it in a new spring.
+I have a new metaphor: eventually a well-worked codebase begins to feel like a tangled summer garden. My company has one, a _Rules Engine_, that has begun to feel much more _grown_ than _planned_. It is valuable, and we've taken a responsible, refactored approach to extending it -- but we have begun to feel the constricting weight of past decisions. It feels safer to allow it to grow perpetually. It is better to harvest what we've learned, to let it die, and to tend something new in the spring.
 
 <Box display="flex" alignItems="center" justifyContent="center">
   <Icon icon={OrigamiSquirrelOutline} color="muted" size={6} />
@@ -35,7 +36,7 @@ I have a new metaphor: eventually a well-worked codebase begins to feel like a t
 
 #### A Page
 
-There are as many personal metaphors about writing software as there are software engineers. To say that programming _lends itself_ to metaphor isn't quite right; software _demands_ metaphor<Footnote id="foot-1" href="#1">1</Footnote>. I work with my hands, but everything I create is _intangible_ and _imaginary_. The only way to talk about it, or to reason about it, is in a language-by-proxy. Otherwise it doesn't really exist<Footnote id="foot-2" href="#2">2</Footnote>. So writing software is the steps to make a sandwich, or building a house, or it's a polymorphic mammal that quacks or barks.
+There are as many personal metaphors about writing software as there are software engineers. To say that programming _lends itself_ to metaphor isn't quite right; software _demands_ metaphor<Footnote id="foot-1" href="#1">1</Footnote>. I work with my hands, but everything I create is _intangible_ and _imaginary_. The only way to talk about it, or to reason about it, is in a language-by-proxy. Otherwise it doesn't really exist<Footnote id="foot-2" href="#2">2</Footnote>. So writing software is the steps to make a sandwich, or of building a house, or it's a polymorphic mammal that quacks or barks.
 
 It might be that the creation of a metaphor is one of those cobbles on the path from journey-person to a master crafter, and so I'm offering my own<Footnote id="foot-3" href="#3">3</Footnote>. It has to do with gardening, although I'm really no great gardener; my partner is generally the one to plan and maintain our planters of parsley and cilantro, and I still get confused between the two. So this will be as maladaptive as any metaphor.
 
@@ -49,9 +50,9 @@ It is not about cultivating code, or about technical debt pruning. It's not feat
 
 I work at _Hatch Loyalty_ to build a platform that enables other, much larger, businesses to run their various loyalty programs. At the heart of the platform is our _Rules Engine_, a <Link href="https://martinfowler.com/bliki/RulesEngine.html" target="_blank" color="muted">production rule system</Link> that allows an abstract marketing strategy to be translated to functional set of actions and effects. Work was just beginning on the _Engine_ when I joined the company two and half years ago. It has continued to evolve.
 
-The _Rules Engine_ began as a relatively simple system that examined _events_ and emitted _effects_; someone purchases "Muscle Milk" and is issued points<Footnote id="foot-6" href="#6">6</Footnote>. It's grown to support a variety of pre-conditions, to support demographic- and behavior-based targeting, and to support various limitations on how often or frequently someone might engage with a particular promotion. At each turn we've done our best to keep the _Engine_ modular and extensible; I work with an astoundingly thoughtful group of folks. This has resulted in something that is coherent, but that is still very complex.
+The _Rules Engine_ began as a relatively simple system that examined _events_ and emitted _effects_; someone purchases "Muscle Milk" and is issued points<Footnote id="foot-4" href="#4">4</Footnote>. It's grown to support a variety of pre-conditions, to support demographic- and behavior-based targeting, and to support various limitations on how often or frequently someone might engage with a particular promotion. At each turn we've done our best to keep the _Engine_ modular and extensible; I work with an astoundingly thoughtful group of folks. This has resulted in something that is coherent, but that is still very complex.
 
-We have refactored with each addition, and re-architected as we came to better understand what we were building. We've re-written sub-sections and renamed modules to better fit their responsibilities<Footnote id="foot-7" href="#7">7</Footnote>. This process helped our own understanding of the product we were building, but we were still broadly constrained by a system that was under constant use and frequent development. The _Engine_, today, feels much more **grown** than **planned**.
+We have refactored with each addition, and re-architected as we came to better understand what we were building. We've re-written sub-sections and renamed modules to better fit their responsibilities<Footnote id="foot-5" href="#5">5</Footnote>. This process helped our own understanding of the product we were building, but we were still broadly constrained by a system that was under constant use and frequent development. The _Engine_, today, feels much more **grown** than **planned**.
 
 <Box display="flex" alignItems="center" justifyContent="center">
   <Icon icon={OrigamiSquirrelOutline} color="accent" size={6} />
@@ -63,9 +64,9 @@ Two years ago we planted basil in a black plastic pot on our first balcony garde
 
 The implicit weight of past decisions and structural assumptions makes it difficult to make foundational changes to an existing codebase. Even with an eye toward refactoring, opening files to _see how things work, now_ introduces a myopic filter that I find difficult to shake. And starting over feels messy and wasteful. The lessons from other folks' rewrites promise the reimplementation of previous mistakes and of losing important, but forgotten knowledge of domain-specific edge cases. Still, I think of this past spring. The Chicago winter had wiped our porch garden clean. It was easy enough to try a different home for the third basil, and to find a plant that appreciated having its roots warmed.
 
-The Chicago winter does not give me a say in when it comes; eventually I'm forced to dig out my _really warm_ coat and trudge about in boots. Software does, and it's both a blessing and a curse. It's often easier to sell -- both to ourselves and to our larger business -- the idea of an eternal growing season. Even as our plants become more entangled and our choices more narrowed.
+The Chicago winter does not give me a say in when it comes; eventually I'm forced to dig out my _really warm_ coat and trudge about in boots. Software does, and it's both a blessing and a curse. It's often easier to sell -- both to ourselves and to our larger business -- the idea of an eternal growing season. Even as our plants become more entangled and our choices more narrowed. I think that it must be better, eventually, to _harvest_ everything that we've learned. It is by necessity that we begin building a system when we know the very least about it. We apply our lessons as software grows, but eventually we must clear away the brush and plant again. It is not about starting over; it is about beginning again with more perspective.
 
-There needs to be a good autumn before the cold may be invited in. Our _Engine_ is working well, and there are no plans for big additions on the horizon. We must be able to bet that work on this piece of our platform might remain dormant for a while; that it will continue to work and to provide the value that we built it for. I think that the winter, if planned for, is not so daunting. There is something in clear, brisk air that forces me become alive. And there is something exciting in a coming spring.
+There needs to be a good autumn before the cold may be invited in. Our _Engine_ is working well, and there are no plans for big additions on the horizon. We must be able to bet that work on this piece of our platform might remain dormant for a while; that it will continue to work and to provide the value that we built it for. I think that the winter, if planned for, is not so daunting. And there is something in clear, brisk air that forces me become alive. And there is something exciting in a coming spring.
 
 <Box display="flex" alignItems="center" justifyContent="center">
   <Icon icon={OrigamiSquirrelFilled} color="accent" size={6} />
@@ -75,9 +76,9 @@ There needs to be a good autumn before the cold may be invited in. Our _Engine_ 
 
 #### An Addendum
 
-Tactically, it's incredibly important that we have integration tests outside of the _Engine_ that we propose to replace. It's important to be able to draw thick lines around the interfaces in to and out of this part of our system. It's important to take a good few leaps in to the sky, to look down at the existing garden beds, and to use all of the understanding we've developed to lay them out fresh. We aim, too, to find some things that are immediately more useful: for us, better observability, and idempotence when processing the incoming events and applying the outgoing effects<Footnote id="foot-8" href="#8">8</Footnote>.
+Tactically it's incredibly important that we have integration tests outside of the _Engine_ that we propose to replace. It's important to be able to draw thick lines around the interfaces in to and out of this part of our system. It's important to take a good few leaps in to the sky, to look down at the existing garden beds, and to use all of the understanding we've developed to lay them out afresh. We aim, too, to find some things that are immediately more useful: for us, better observability, and idempotence when processing the incoming events and applying the outgoing effects<Footnote id="foot-6" href="#6">6</Footnote>.
 
-I think that Basecamp's ideas on <Link href="https://basecamp.com/shapeup/4.2-appendix-03#new-versus-existing-products" target="_blank" color="muted">new products</Link> will fit our overall process. I have a feeling that they've done something similar to this when creating Basecamp 3, and might again as they write Basecamp 4 -- but I don't have any real details on that. I'm hopeful about a winter for our _Rules Engine_, but we have not embarked. Fortunately for me; I'm looking forward to writing that piece soon.
+I think that Basecamp's ideas on <Link href="https://basecamp.com/shapeup/4.2-appendix-03#new-versus-existing-products" target="_blank" color="muted">new products</Link> fit with this process. I have a feeling that they've done something similar to this when creating Basecamp 3, and might again as they write Basecamp 4 -- but I don't have any real details on that. I'm hopeful about a winter for our _Rules Engine_, but we have not embarked. Fortunately for me; I'm looking forward to writing that piece soon.
 
 <Box as="hr" my={4} bg="hr" height="2px" sx={{ border: 'none' }} />
 
@@ -96,7 +97,7 @@ I think that Basecamp's ideas on <Link href="https://basecamp.com/shapeup/4.2-ap
     2:
   </Link>{' '}
   Except maybe for the folks in robotics whose creations are at least partially real. When they say "jump," their creation asks its magnetic
-  brain "how many bits?"
+  brain "how many bits high?"
 </Text>
 
 <Text color="muted" id="3" mb={2}>
@@ -104,40 +105,39 @@ I think that Basecamp's ideas on <Link href="https://basecamp.com/shapeup/4.2-ap
     3:
   </Link>{' '}
   No one achieves anything alone
-  <Footnote id="foot-4" href="#4">
-    4
+  <Footnote id="foot-A" href="#A">
+    A
+  </Footnote>. I've been kicking this idea around with other folks at <i>Hatch</i>, any of whom have as much claim to write their own post.
+  As long as they cite me, similarly vaguely, in a footnote.
+</Text>
+
+<Text color="muted" id="A" mb={2}>
+  <Link href="#foot-A" color="accent">
+    A:
+  </Link>{' '}
+  As I coopt Leslie Knope of "Parks and Recreation."
+  <Footnote id="foot-B" href="#B">
+    B
   </Footnote>
-  . I've been kicking this idea around with other folks at <i>Hatch</i>, any of whom have as much claim to write their own post. As long as
-  they cite me, similarly vaguely, in a footnote.
+</Text>
+
+<Text color="muted" id="B" mb={2}>
+  <Link href="#foot-B" color="accent">
+    B:
+  </Link>{' '}
+  As I borrow from the great <i>Sir Terry Pratchett</i>.
 </Text>
 
 <Text color="muted" id="4" mb={2}>
   <Link href="#foot-4" color="accent">
     4:
   </Link>{' '}
-  Seen again as I coopt Leslie Knope of "Parks and Recreation."
-  <Footnote id="foot-5" href="#5">
-    5
-  </Footnote>
+  And presumably muscles.
 </Text>
 
 <Text color="muted" id="5" mb={2}>
   <Link href="#foot-5" color="accent">
     5:
-  </Link>{' '}
-  And again as I borrow from the great <i>Sir Terry Pratchett</i>.
-</Text>
-
-<Text color="muted" id="6" mb={2}>
-  <Link href="#foot-6" color="accent">
-    6:
-  </Link>{' '}
-  And presumably muscles.
-</Text>
-
-<Text color="muted" id="7" mb={2}>
-  <Link href="#foot-7" color="accent">
-    7:
   </Link>{' '}
   Some detail feels appropriate in order to not remain entirely abstract. In our first iteration of limiting engagement with a promotion (<i>maximum 5 uses per customer</i>), we developed a model that we called a "Tracker." The Tracker was responsible both for recording the fulfillment of a promotion, as well as optionally enforcing the limitation. Eventually it became apparent that these were two very separate responsibilities.
 
@@ -145,9 +145,9 @@ Marketing folks wanted all of their promotions <i>tracked</i>, but only some <i>
 
 </Text>
 
-<Text color="muted" id="8" mb={2}>
-  <Link href="#foot-8" color="accent">
-    8:
+<Text color="muted" id="6" mb={2}>
+  <Link href="#foot-6" color="accent">
+    6:
   </Link>{' '}
   We use Sidekiq on both ends of execution, and have run in to a very small but measurable number of jobs that execute <Link href="https://github.com/mperham/sidekiq/wiki/FAQ#what-happens-to-long-running-jobs-when-sidekiq-restarts" target="_blank" color="muted">twice</Link>.
 </Text>
