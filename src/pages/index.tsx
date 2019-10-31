@@ -54,6 +54,12 @@ const IndexPage = ({ location }: { location: { pathname: string } }) => {
         <Text color="muted" fontSize={[3, 4, 5]} my={3}>
           Here is some poetry. Thoughts about existing in the world. Ideas about technology.
         </Text>
+        <Text color="muted" fontSize={[1, 2, 3]}>
+          Send your own thoughts to my brain at{' '}
+          <Link color="muted" href="mailto:ipromisethisisnotspam@trumanshuck.com">
+            ipromisethisisnotspam@trumanshuck.com
+          </Link>.
+        </Text>
       </Box>
 
       <Tags availableTags={availableTags} selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
