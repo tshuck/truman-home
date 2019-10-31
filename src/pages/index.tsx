@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { Box, Heading, Text } from 'rebass'
+import { Box, Heading, Flex, Link, Text } from 'rebass'
+import { GitHub } from 'react-feather'
 import { useStaticQuery, graphql } from 'gatsby'
 import { PreviewItems, Tags } from '../components'
 import Layout from '../layouts'
@@ -53,15 +54,26 @@ const IndexPage = ({ location }: { location: { pathname: string } }) => {
         <Text color="muted" fontSize={[3, 4, 5]} my={3}>
           Here is some poetry. Thoughts about existing in the world. Ideas about technology.
         </Text>
+        <Text color="muted" fontSize={[1, 2, 3]}>
+          Send your own thoughts to my brain at{' '}
+          <Link color="muted" href="mailto:ipromisethisisnotspam@trumanshuck.com">
+            ipromisethisisnotspam@trumanshuck.com
+          </Link>.
+        </Text>
       </Box>
 
       <Tags availableTags={availableTags} selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
       <PreviewItems selectedTags={selectedTags} />
 
       <Box as="hr" my={2} bg="hr" height="2px" sx={{ border: 'none' }} />
-      <Text color="muted" fontSize={[0, 1, 2]} my={3}>
-        Thanks for your time &amp; attention. Site title from e.e. cummings' <i>who are you, little i</i>.
-      </Text>
+      <Flex justifyContent="space-between" alignItems="center">
+        <Text color="muted" fontSize={[0, 1, 2]} my={3}>
+          Thanks for your time &amp; attention. Site title from e.e. cummings' <i>who are you, little i</i>.
+        </Text>
+        <Link color="muted" href="https://github.com/tshuck/trumanshuck.com" target="_blank">
+          <GitHub />
+        </Link>
+      </Flex>
     </Layout>
   )
 }
