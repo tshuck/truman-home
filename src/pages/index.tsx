@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { Box, Heading, Text } from 'rebass'
+import { Box, Heading, Flex, Link, Text } from 'rebass'
+import { GitHub } from 'react-feather'
 import { useStaticQuery, graphql } from 'gatsby'
 import { PreviewItems, Tags } from '../components'
 import Layout from '../layouts'
@@ -59,9 +60,14 @@ const IndexPage = ({ location }: { location: { pathname: string } }) => {
       <PreviewItems selectedTags={selectedTags} />
 
       <Box as="hr" my={2} bg="hr" height="2px" sx={{ border: 'none' }} />
-      <Text color="muted" fontSize={[0, 1, 2]} my={3}>
-        Thanks for your time &amp; attention. Site title from e.e. cummings' <i>who are you, little i</i>.
-      </Text>
+      <Flex justifyContent="space-between" alignItems="center">
+        <Text color="muted" fontSize={[0, 1, 2]} my={3}>
+          Thanks for your time &amp; attention. Site title from e.e. cummings' <i>who are you, little i</i>.
+        </Text>
+        <Link color="muted" href="https://github.com/tshuck/trumanshuck.com" target="_blank">
+          <GitHub />
+        </Link>
+      </Flex>
     </Layout>
   )
 }
