@@ -58,7 +58,8 @@ const IndexPage = ({ location }: { location: { pathname: string } }) => {
           Send your own thoughts to my brain at{' '}
           <Link color="muted" href="mailto:ipromisethisisnotspam@trumanshuck.com">
             ipromisethisisnotspam@trumanshuck.com
-          </Link>.
+          </Link>
+          .
         </Text>
       </Box>
 
