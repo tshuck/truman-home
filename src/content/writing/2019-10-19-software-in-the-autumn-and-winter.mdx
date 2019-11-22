@@ -40,7 +40,7 @@ There are as many personal metaphors about writing software as there are people 
 
 It might be that the creation of a metaphor is one of those cobbles on the path from novice to less-novice, and so I'm offering my own<Footnote id="foot-2" href="#2">2</Footnote>. It has to do with gardening, although I'm really no great gardener: my partner is generally the one to maintain our planters of parsley and cilantro, and I still get confused between the two. So this will be as maladaptive as any metaphor.
 
-It's not about cultivating code, or about pruning technical debt. It's not features as flowers<Footnote id="foot-3" href="#3">3</Footnote>. I'm concerned with the later seasons: as we find ourselves in the autumn and eventually the winter. What does it mean to harvest, to care for the soil, and to spend time reflecting while the ground is hard and little grows. What does it mean to reap knowledge of our domain, to maintain clear and coherent systems, and to use that understanding to continuing growing ever more complex products.
+It's not about cultivating code, or about pruning technical debt. It's not features as flowers<Footnote id="foot-3" href="#3">3</Footnote>. I'm concerned with the later seasons: as we find ourselves in the autumn and eventually the winter. What does it mean to harvest, to care for the soil, and to spend time reflecting while the ground is hard and little grows. What does it mean to reap knowledge of our domain, to maintain clear and coherent systems, and to use that understanding to continue growing ever more complex products.
 
 How do we allow the ground to lie fallow, how do we plan to grow again in the spring.
 
@@ -64,7 +64,7 @@ We've refactored and rearchitected. We've rewritten subsections. We've renamed m
 
 Two years ago my partner and I planted basil in a black plastic pot in our first balcony garden. It grew, but was stunted and withered before the summer was over. We moved, tried again in the following spring, and killed a second plant. It was late in the second summer when we realized that basil may not appreciate having its roots burned by the dark pot and the hot sun. But, our other balcony boxes were flourishing with flowers and thyme and mint and oregano. We could have tried a mid-season transplant, but the other herbs might have been shocked at being uprooted. And anyway it would have made a mess on the deck.
 
-We have fundamental improvements to make to our _Rules Engine_. The _Engine_ executes asynchronously as a background job, and we'd like it to execute synchronously: this means that performance is a greater concern. We'd like its processing to be more observable, and we'd like it to be idempotent<Footnote id="foot-6" href="#6">6</Footnote>. These improvements require foundational changes to the _Rules Engine_. Our foundation is a creeping briar of past decisions. I don't believe that there is a better way to build software<Footnote id="foot-7" href="#7">7</Footnote>, and yet we feel constricted. It is difficult to encourage systemic growth when surveying the state of _what is_ introduces a myopic filter on _what can be_. Every choice we've made, every module we've built, has lead us to product that is subtly, intractably, entangled.
+We have fundamental improvements to make to our _Rules Engine_. The _Engine_ executes asynchronously as a background job, and we'd like it to execute synchronously: this means that performance is a greater concern. We'd like its processing to be more observable, and we'd like it to be idempotent<Footnote id="foot-6" href="#6">6</Footnote>. These improvements require foundational changes to the _Rules Engine_. Our foundation is a creeping briar of past decisions. I don't believe that there is a better way to build software<Footnote id="foot-7" href="#7">7</Footnote>, and yet we feel constricted. It is difficult to encourage systemic growth when surveying the state of _what is_ introduces a myopic filter on _what can be_. Every choice we've made, every module we've built, has lead us to a product that is subtly, intractably, entangled.
 
 I think about crop rotation, about letting a field lay fallow and allowing <Link href="https://www.sare.org/Learning-Center/Books/Crop-Rotation-on-Organic-Farms/Text-Version/Physical-and-Biological-Processes-In-Crop-Production/Crop-Rotation-Effects-on-Soil-Fertility-and-Plant-Nutrition" target="_blank" color="muted">dirt to again become soil</Link>. I think about this past spring, and about how easy it was to find a new home for our basil after the Chicago winter had wiped away our porch garden. I want to harvest what we've learned about loyalty programs, about software, and about our _Rules Engine_, and to write it again. To grow it from seed in good soil.
 
@@ -149,8 +149,8 @@ It's important to <i>track</i> all promotions, but only a portion require <i>lim
   .
 </Text>
 
-<Text color="muted" id="6" mb={2}>
-  <Link href="#foot-6" color="accent">
+<Text color="muted" id="7" mb={2}>
+  <Link href="#foot-7" color="accent">
     7:
   </Link>{' '}
   Grand plans <Link href="http://agilemanifesto.org" target="_blank" color="muted">don't work</Link>. We begin building software when we <i>know</i> the least and <i>assume</i> the most. We know the most about our plants after they've grown, and the most about our products after they're built.
